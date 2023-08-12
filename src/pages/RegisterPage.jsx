@@ -1,9 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { selectAuthentificated } from 'redux/authReducer';
 import { registerUserThunk } from 'redux/operations';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
+  const authentificated = useSelector(selectAuthentificated);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -14,8 +17,11 @@ const RegisterPage = () => {
     const email = form.elements.userEmail.value;
     const password = form.elements.userPassword.value;
 
-    dispatch(registerUserThunk({ name, email, password, }));
+    dispatch(registerUserThunk({ name, email, password }));
   };
+
+  if (authentificated) return <Navigate to="/contacts" />;
+
   return (
     <div>
       <h1>Register Your Account</h1>

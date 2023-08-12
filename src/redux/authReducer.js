@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginUserThunk, logoutUserThunk, refreshUserThunk, registerUserThunk } from './operations';
-// import {
-//   addContactDataThunk,
-//   deleteContactDataThunk,
-//   fetchContactDataThunk,
-// } from 'redux/operations';
+import {
+  loginUserThunk,
+  logoutUserThunk,
+  refreshUserThunk,
+  registerUserThunk,
+} from './operations';
 
 const initialState = {
   isLoading: false,
@@ -17,22 +17,6 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  // reducers: {
-  //   setFilter: (state, action) => {
-  //     state.filter = action.payload;
-  //   },
-  //   deleteContact: (state, action) => {
-  //     state.contacts.items = state.contacts.items.filter(
-  //       contact => contact.id !== action.payload
-  //     );
-  //   },
-  //   setName: (state, action) => {
-  //     state.name = action.payload;
-  //   },
-  //   setNumber: (state, action) => {
-  //     state.phone = action.payload;
-  //   },
-  // },
   extraReducers: builder => {
     builder
       .addCase(registerUserThunk.pending, state => {
@@ -103,32 +87,6 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = action.error.message;
       });
-      // .addCase(addContactDataThunk.pending, state => {
-      //   state.contacts.isLoading = true;
-      //   state.contacts.error = null;
-      // })
-      // .addCase(addContactDataThunk.fulfilled, (state, action) => {
-      //   state.contacts.isLoading = false;
-      //   state.contacts.items.push(action.payload);
-      // })
-      // .addCase(addContactDataThunk.rejected, (state, action) => {
-      //   state.contacts.isLoading = false;
-      //   state.contacts.error = action.error.message;
-      // })
-      // .addCase(deleteContactDataThunk.pending, state => {
-      //   state.contacts.isLoading = true;
-      //   state.contacts.error = null;
-      // })
-      // .addCase(deleteContactDataThunk.fulfilled, (state, action) => {
-      //   state.contacts.isLoading = false;
-      //   state.contacts.items = state.contacts.items.filter(
-      //     contact => contact.id !== action.payload
-      //   );
-      // })
-      // .addCase(deleteContactDataThunk.rejected, (state, action) => {
-      //   state.contacts.isLoading = false;
-      //   state.contacts.error = action.error.message;
-      // });
   },
 });
 

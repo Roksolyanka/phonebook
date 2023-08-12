@@ -5,21 +5,28 @@ import { ListPhone } from './ListPhone.styled';
 import { ButtonDelete } from './ButtonDelete.styled';
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
+  const showContacts = Array.isArray(contacts) && contacts.length > 0;
+
   return (
     <ul>
-      {contacts.map(contact => (
-        <ContactItem key={contact.id}>
-          <div>
-            <span>{contact.name}</span>:<ListPhone>{contact.phone}</ListPhone>
-          </div>
-          <ButtonDelete
-            type="button"
-            onClick={() => onDeleteContact(contact.id)}
-          >
-            Delete
-          </ButtonDelete>
-        </ContactItem>
-      ))}
+      {showContacts &&
+        contacts.map(contact => {
+          return (
+            <ContactItem key={contact.id}>
+              <div>
+                <span>{contact.name}</span>:
+                <ListPhone>{contact.number}</ListPhone>
+              </div>
+              <ButtonDelete
+                aria-label="Delete contact"
+                type="button"
+                onClick={() => onDeleteContact(contact.id)}
+              >
+                &times;
+              </ButtonDelete>
+            </ContactItem>
+          );
+        })}
     </ul>
   );
 };
