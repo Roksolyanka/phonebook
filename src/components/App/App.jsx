@@ -145,7 +145,7 @@ import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Loader } from 'components/Loader/Loader';
-import { StyledNavLink } from 'components/App/App.styled';
+import { ButtonLogOut, Creator, Footer, Header, StyledNavLink } from 'components/App/App.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthentificated, selectToken } from 'redux/authReducer';
 import { logoutUserThunk, refreshUserThunk } from 'redux/operations';
@@ -171,14 +171,14 @@ export const App = () => {
   };
 
   return (
-    <div>
-      <header>
+    <div id="app-container">
+      <Header>
         <nav>
           <StyledNavLink to="/">Home</StyledNavLink>
           {authentificated ? (
             <>
               <StyledNavLink to="/contacts">Contacts</StyledNavLink>
-              <button onClick={handleLogOut}>Log out</button>
+              <ButtonLogOut onClick={handleLogOut}>Log out</ButtonLogOut>
             </>
           ) : (
             <>
@@ -187,7 +187,7 @@ export const App = () => {
             </>
           )}
         </nav>
-      </header>
+      </Header>
       <main>
         <Suspense fallback={<Loader />}>
           <Routes>
@@ -205,6 +205,12 @@ export const App = () => {
           </Routes>
         </Suspense>
       </main>
+      <Footer>
+        <span>© 2023 Created by </span>
+        <Creator href="https://github.com/Roksolyanka">
+          Roksolana Kushnir
+        </Creator>
+      </Footer>
     </div>
   );
 };
