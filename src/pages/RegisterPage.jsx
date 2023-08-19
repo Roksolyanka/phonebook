@@ -1,3 +1,13 @@
+import { Button } from 'components/Button/Button.styled';
+import {
+  Backdrop,
+  Box,
+  ModalForm,
+  ModalInput,
+  ModalTitle,
+  ModalTitleInitiated,
+  Wrapper,
+} from 'components/Modal/Modal.styled';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
@@ -13,9 +23,9 @@ const RegisterPage = () => {
 
     const form = event.currentTarget;
 
-    const name = form.elements.userName.value;
-    const email = form.elements.userEmail.value;
-    const password = form.elements.userPassword.value;
+    const name = form.elements.userName.value.trim();
+    const email = form.elements.userEmail.value.trim();
+    const password = form.elements.userPassword.value.trim();
 
     dispatch(registerUserThunk({ name, email, password }));
   };
@@ -23,27 +33,49 @@ const RegisterPage = () => {
   if (authentificated) return <Navigate to="/contacts" />;
 
   return (
-    <div>
-      <h1>Register Your Account</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <p>Name:</p>
-          <input name="userName" type="text" required minLength={2} />
-        </label>
-        <br />
-        <label>
-          <p>Email:</p>
-          <input name="userEmail" type="email" required minLength={2} />
-        </label>
-        <br />
-        <label>
-          <p>Password:</p>
-          <input name="userPassword" type="password" required minLength={7} />
-        </label>
-        <br />
-        <button type="submit">Sign up</button>
-      </form>
-    </div>
+    <Backdrop>
+      <Box>
+        <Wrapper>
+          <ModalTitle>Register Your Account</ModalTitle>
+          <ModalForm onSubmit={handleSubmit}>
+            <label>
+              <ModalTitleInitiated>Name:</ModalTitleInitiated>
+              <ModalInput
+                name="userName"
+                type="text"
+                required
+                minLength={2}
+                autoComplete="userName"
+              />
+            </label>
+            <br />
+            <label>
+              <ModalTitleInitiated>Email:</ModalTitleInitiated>
+              <ModalInput
+                name="userEmail"
+                type="email"
+                required
+                minLength={2}
+                autoComplete="email"
+              />
+            </label>
+            <br />
+            <label>
+              <ModalTitleInitiated>Password:</ModalTitleInitiated>
+              <ModalInput
+                name="userPassword"
+                type="password"
+                required
+                minLength={7}
+                autoComplete="current-password"
+              />
+            </label>
+            <br />
+            <Button type="submit">Sign up</Button>
+          </ModalForm>
+        </Wrapper>
+      </Box>
+    </Backdrop>
   );
 };
 

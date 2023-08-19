@@ -15,8 +15,8 @@ export const ContactForm = () => {
 
     const form = event.currentTarget;
 
-    const name = form.elements.contactName.value;
-    const number = form.elements.contactNumber.value;
+    const name = form.elements.contactName.value.trim();
+    const number = form.elements.contactNumber.value.trim();
 
     if (contacts.some(contact => contact.name === name))
       return alert(`Contact with name ${name} already exists!`);
