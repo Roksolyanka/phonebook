@@ -5,8 +5,8 @@ import { StyledNavLink } from './App/App.styled';
 
 const HomePage = lazy(() => import('../pages/HomePage/Home'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage/Contacts'));
-const RegisterPage = lazy(() => import('../pages/RegisterPage'));
-const LoginPage = lazy(() => import('../pages/LoginPage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage/Register'));
+const LoginPage = lazy(() => import('../pages/LoginPage/Login'));
 
 export const Apps = () => {
   return (

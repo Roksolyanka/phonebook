@@ -1,3 +1,10 @@
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { registerUserThunk } from 'redux/operations';
+import { selectAuthentificated } from 'redux/selectors';
+
 import { Button } from 'components/Button/Button.styled';
 import {
   Backdrop,
@@ -8,11 +15,6 @@ import {
   ModalTitleInitiated,
   Wrapper,
 } from 'components/Modal/Modal.styled';
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
-import { selectAuthentificated } from 'redux/authReducer';
-import { registerUserThunk } from 'redux/operations';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();

@@ -6,14 +6,12 @@ export const Backdrop = styled.div`
   left: 0;
   width: 100%;
   height: 80%;
-  //   z-index: 1000;
   background-color: rgba(46, 47, 66, 0.4);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
-  //   display: none;
 
   &.is-hidden {
     visibility: hidden;

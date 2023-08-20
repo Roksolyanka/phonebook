@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { selectAuthentificated } from 'redux/authReducer';
+
+import { selectAuthentificated } from 'redux/selectors';
+
 
 const PrivateRoute = ({children, redirectTo='/'}) => {
 const authentificated = useSelector(selectAuthentificated);

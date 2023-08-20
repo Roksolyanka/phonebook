@@ -2,7 +2,21 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  padding: 30px; 
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+`;
+
+export const NavLeft = styled.nav`
+  flex: 1;
+`;
+
+export const NavRight = styled.nav`
+  display: flex;
+  gap: 20px;
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -32,6 +46,18 @@ export const StyledNavLink = styled(NavLink)`
     color: #ffe724;
     box-shadow: 5px 5px 2px 0px #ffe724;
   }
+`;
+
+export const Welcome = styled.span`
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 25px;
+  color: #120c07;
+  text-shadow: 0 1px 0 #120c07;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  right: 180px;
 `;
 
 export const ButtonLogOut = styled.button`
@@ -64,7 +90,6 @@ export const Footer = styled.footer`
   color: #ffe724;
   text-shadow: 0 1px 0 #120c07;
   text-align: center;
-  //   flex-shrink: 0;
 `;
 
 export const Creator = styled.a`
