@@ -4,7 +4,6 @@ import {
   deleteContactsThunk,
   requestContactsThunk,
 } from './contactsOperations';
-import Notiflix from 'notiflix';
 
 const initialState = {
   contacts: null,
@@ -45,7 +44,6 @@ const contactsSlice = createSlice({
       .addCase(addContactsThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.contacts.push(action.payload);
-        Notiflix.Notify.success(`Contact successfully added.`);
       })
       .addCase(addContactsThunk.rejected, (state, action) => {
         state.isLoading = false;
@@ -63,7 +61,6 @@ const contactsSlice = createSlice({
         state.contacts = state.contacts.filter(
           contact => contact.id !== action.payload.id
         );
-        Notiflix.Notify.success(`Contact deleted successfully.`);
       })
       .addCase(deleteContactsThunk.rejected, (state, action) => {
         state.isLoading = false;

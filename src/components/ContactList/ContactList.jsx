@@ -7,6 +7,7 @@ import {
   ContactsList,
   ListPhone,
 } from './ContactListStyled.styled';
+import Notiflix from 'notiflix';
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
   const showContacts = Array.isArray(contacts) && contacts.length > 0;
@@ -24,7 +25,12 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
               <ButtonDelete
                 aria-label="Delete contact"
                 type="button"
-                onClick={() => onDeleteContact(contact.id)}
+                onClick={() => {
+                  onDeleteContact(contact.id);
+                  Notiflix.Notify.success(
+                    `Contact ${contact.name} successfully deleted.`
+                  );
+                }}
               >
                 &times;
               </ButtonDelete>
