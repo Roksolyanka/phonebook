@@ -22,3 +22,4 @@ export const Button = styled.button`
     border: 1px solid #120c07;
   }
 `;
+

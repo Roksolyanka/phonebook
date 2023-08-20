@@ -158,7 +158,7 @@ import { logoutUserThunk, refreshUserThunk } from 'redux/operations';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 
 const HomePage = lazy(() => import('../../pages/HomePage/Home'));
-const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
+const ContactsPage = lazy(() => import('../../pages/ContactsPage/Contacts'));
 const RegisterPage = lazy(() => import('../../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../../pages/LoginPage'));
 

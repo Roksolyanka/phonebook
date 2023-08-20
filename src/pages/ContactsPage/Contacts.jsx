@@ -1,4 +1,3 @@
-import { Loader } from 'components/Loader/Loader';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthentificated } from 'redux/authReducer';
@@ -13,13 +12,14 @@ import {
   selectUserContacts,
   setFilter,
 } from 'redux/contactsReducer';
-import { Container } from 'components/App/Container.styled';
-import { ContainerForm } from 'components/App/ContainerForm.styled';
-import { TitlePhonebook } from 'components/App/TitlePhonebook.styled';
-import { TitleContacts } from 'components/App/TitleContacts.styled';
-import { Filter } from 'components/Filter/Filter';
-import { ContactList } from 'components/ContactList/ContactList';
+
 import { ContactForm } from 'components/ContactForm/ContactForm';
+import { ContactList } from 'components/ContactList/ContactList';
+import { Filter } from 'components/Filter/Filter';
+import { Loader } from 'components/Loader/Loader';
+
+import { TitlePhonebook } from 'components/App/App.styled';
+import { Container, TitleContacts } from './ContactsPage.styled';
 
 const ContactsPage = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -57,9 +57,7 @@ const ContactsPage = () => {
     <section>
       <TitlePhonebook>Phonebook</TitlePhonebook>
       <Container>
-        <ContainerForm>
-          <ContactForm />
-        </ContainerForm>
+        <ContactForm />
         <div>
           <TitleContacts>Contacts</TitleContacts>
           {isLoading && <Loader />}
