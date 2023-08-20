@@ -72,7 +72,6 @@ export const ButtonLogOut = styled.button`
   padding: 15px;
   max-height: auto;
   max-width: 200px;
-  margin: 20px auto;
 
   &: hover {
     outline-color: transparent;
