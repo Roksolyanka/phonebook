@@ -53,7 +53,9 @@ const authSlice = createSlice({
       .addCase(loginUserThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
-        Notiflix.Notify.failure('Login failed. Please check your credentials.');
+        Notiflix.Notify.failure(
+          'Login failed. Please check your credentials.'
+        );
       })
 
       // -----------------------------REFRESH-----------------------------------
@@ -92,12 +94,4 @@ const authSlice = createSlice({
   },
 });
 
-export const { setFilter, deleteContact, setName, setNumber } =
-  authSlice.actions;
 export const authReducer = authSlice.reducer;
-
-export const selectUserLoading = state => state.auth.isLoading;
-export const selectUserError = state => state.auth.error;
-export const selectToken = state => state.auth.token;
-export const selectUserData = state => state.auth.userData;
-export const selectAuthentificated = state => state.auth.authentificated;

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { addContactsThunk } from 'redux/contactsOperations';
-import { selectUserContacts } from 'redux/contactsReducer';
+import { selectUserContacts } from 'redux/selectors';
+
+import Notiflix from 'notiflix';
 
 import { Button } from 'components/Button/Button.styled';
 import { ContainerForm, Form, Input } from './FormAddContact.styled';
@@ -22,10 +25,15 @@ export const ContactForm = () => {
     const number = form.elements.contactNumber.value.trim();
 
     if (contacts.some(contact => contact.name === name))
-      return alert(`Contact with name ${name} already exists!`);
+      return Notiflix.Notify.info(
+        `Contact with name ${name} already exists!`
+      );
+    
 
     if (contacts.some(contact => contact.number === number))
-      return alert(`Contact with number ${number} already exists!`);
+      return Notiflix.Notify.info(
+        `Contact with number ${number} already exists!`
+      );
 
     dispatch(addContactsThunk({ name, number }));
 
