@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+`;
+
 export const TitleContacts = styled.h2`
   font-family: 'Roboto';
   font-size: 70px;

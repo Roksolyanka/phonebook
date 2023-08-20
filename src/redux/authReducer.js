@@ -6,6 +6,8 @@ import {
   registerUserThunk,
 } from './operations';
 
+import Notiflix from 'notiflix';
+
 const initialState = {
   isLoading: false,
   error: null,
@@ -51,6 +53,7 @@ const authSlice = createSlice({
       .addCase(loginUserThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
+        Notiflix.Notify.failure('Login failed. Please check your credentials.');
       })
 
       // -----------------------------REFRESH-----------------------------------

@@ -1,7 +1,7 @@
-import { TitlePhonebook } from 'components/App/TitlePhonebook.styled';
 import React from 'react';
 import phonebookImage from '../../images/phonebook.png';
 import { HomePageSection } from './HomePage.styled';
+import { TitlePhonebook } from 'components/App/App.styled';
 
 const HomePage = () => {
   return (

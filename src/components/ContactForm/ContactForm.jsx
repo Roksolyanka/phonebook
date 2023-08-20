@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Form } from './Form.styled';
-import { Input } from './Input.styled';
-import { Button } from './Button.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContactsThunk } from 'redux/contactsOperations';
 import { selectUserContacts } from 'redux/contactsReducer';
+
+import { Button } from 'components/Button/Button.styled';
+import { ContainerForm, Form, Input } from './FormAddContact.styled';
 
 export const ContactForm = () => {
   const contacts = useSelector(selectUserContacts);
@@ -34,26 +34,28 @@ export const ContactForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <label>Name: </label>
-      <Input
-        type="text"
-        name="contactName"
-        value={contactName}
-        onChange={e => setContactName(e.target.value)}
-        required
-      />
+      <ContainerForm>
+        <Form onSubmit={handleSubmit}>
+          <label>Name: </label>
+          <Input
+            type="text"
+            name="contactName"
+            value={contactName}
+            onChange={e => setContactName(e.target.value)}
+            required
+          />
 
-      <label>Number: </label>
-      <Input
-        type="text"
-        name="contactNumber"
-        value={contactNumber}
-        onChange={e => setContactNumber(e.target.value)}
-        required
-      />
+          <label>Number: </label>
+          <Input
+            type="text"
+            name="contactNumber"
+            value={contactNumber}
+            onChange={e => setContactNumber(e.target.value)}
+            required
+          />
 
-      <Button type="submit">Add contact</Button>
-    </Form>
+          <Button type="submit">Add contact</Button>
+        </Form>
+      </ContainerForm>
   );
 };

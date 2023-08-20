@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ContactItem } from './ContactItem.styled';
-import { ListPhone } from './ListPhone.styled';
-import { ButtonDelete } from './ButtonDelete.styled';
+
+import {
+  ButtonDelete,
+  ContactItem,
+  ContactsList,
+  ListPhone,
+} from './ContactListStyled.styled';
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
   const showContacts = Array.isArray(contacts) && contacts.length > 0;
 
   return (
-    <ul>
+    <ContactsList>
       {showContacts &&
         contacts.map(contact => {
           return (
@@ -27,7 +31,7 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
             </ContactItem>
           );
         })}
-    </ul>
+    </ContactsList>
   );
 };
 
