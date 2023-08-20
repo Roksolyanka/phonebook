@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Loader } from './Loader/Loader';
 import { StyledNavLink } from './App/App.styled';
 
-const HomePage = lazy(() => import('../pages/HomePage'));
+const HomePage = lazy(() => import('../pages/HomePage/Home'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));

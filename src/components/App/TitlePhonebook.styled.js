@@ -4,6 +4,7 @@ export const TitlePhonebook = styled.h1`
   font-family: 'Roboto';
   font-size: 100px;
   font-weight: bold;
+  width: 100%;
   color: #e2e2e2;
   text-align: center;
   text-shadow: #120c07 10px 0 5px;

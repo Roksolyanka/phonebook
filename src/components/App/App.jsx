@@ -145,13 +145,19 @@ import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Loader } from 'components/Loader/Loader';
-import { ButtonLogOut, Creator, Footer, Header, StyledNavLink } from 'components/App/App.styled';
+import {
+  ButtonLogOut,
+  Creator,
+  Footer,
+  Header,
+  StyledNavLink,
+} from 'components/App/App.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthentificated, selectToken } from 'redux/authReducer';
 import { logoutUserThunk, refreshUserThunk } from 'redux/operations';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 
-const HomePage = lazy(() => import('../../pages/HomePage'));
+const HomePage = lazy(() => import('../../pages/HomePage/Home'));
 const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
 const RegisterPage = lazy(() => import('../../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../../pages/LoginPage'));
