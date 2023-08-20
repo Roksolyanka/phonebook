@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form } from './Form.styled';
 import { Input } from './Input.styled';
 import { Button } from './Button.styled';
@@ -9,6 +9,9 @@ import { selectUserContacts } from 'redux/contactsReducer';
 export const ContactForm = () => {
   const contacts = useSelector(selectUserContacts);
   const dispatch = useDispatch();
+
+ const [contactName, setContactName] = useState('');
+ const [contactNumber, setContactNumber] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -25,15 +28,30 @@ export const ContactForm = () => {
       return alert(`Contact with number ${number} already exists!`);
 
     dispatch(addContactsThunk({ name, number }));
+
+    setContactName('');
+    setContactNumber('');
   };
 
   return (
     <Form onSubmit={handleSubmit}>
       <label>Name: </label>
-      <Input type="text" name="contactName" required />
+      <Input
+        type="text"
+        name="contactName"
+        value={contactName}
+        onChange={e => setContactName(e.target.value)}
+        required
+      />
 
       <label>Number: </label>
-      <Input type="text" name="contactNumber" required />
+      <Input
+        type="text"
+        name="contactNumber"
+        value={contactNumber}
+        onChange={e => setContactNumber(e.target.value)}
+        required
+      />
 
       <Button type="submit">Add contact</Button>
     </Form>
