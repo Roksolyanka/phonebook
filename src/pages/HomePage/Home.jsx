@@ -1,13 +1,13 @@
 import { TitlePhonebook } from 'components/App/TitlePhonebook.styled';
 import React from 'react';
 import phonebookImage from '../../images/phonebook.png';
-import { HomePageSection, ImagePhonebook } from './HomePage.styled';
+import { HomePageSection } from './HomePage.styled';
 
 const HomePage = () => {
   return (
     <HomePageSection>
       <TitlePhonebook>Phonebook</TitlePhonebook>
-      <ImagePhonebook src={phonebookImage} alt='phonebook' />
+      <img src={phonebookImage} alt="phonebook" width="600" height="400"/>
     </HomePageSection>
   );
 };

@@ -6,7 +6,3 @@ export const HomePageSection = styled.section`
   align-items: center;
   text-align: center;
 `;
-
-export const ImagePhonebook = styled.img`
-  margin-top: 120px;
-`;

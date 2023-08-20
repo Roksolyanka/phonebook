@@ -9,5 +9,6 @@ export const TitlePhonebook = styled.h1`
   text-align: center;
   text-shadow: #120c07 10px 0 5px;
   margin-bottom: 20px;
+  margin-top: 20px;
   box-shadow: #ffe724 0px 20px 30px, #ffe724 0px 2px 5px;
 `;
