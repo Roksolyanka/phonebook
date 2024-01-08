@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from 'theme';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -6,7 +7,7 @@ export const Backdrop = styled.div`
   left: 0;
   width: 100%;
   height: 80%;
-  background-color: rgba(46, 47, 66, 0.4);
+  background-color: ${() => colors.backdropColor};
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
@@ -20,9 +21,9 @@ export const Backdrop = styled.div`
 `;
 
 export const Box = styled.div`
-  background-color: #8c8377;
+  background-color: ${() => colors.backgroundColor};
   position: relative;
-  box-shadow: 1px 1px 14px 4px #ffe724;
+  box-shadow: 1px 1px 14px 4px ${() => colors.accentColor};
   border-radius: 16px;
   width: 400px;
   height: 400px;
@@ -51,7 +52,7 @@ export const Wrapper = styled.div`
 
 export const ModalTitle = styled.h1`
   text-align: center;
-  color: #120c07;
+  color: ${() => colors.textShadowColor};
 `;
 
 export const ModalForm = styled.form`
@@ -59,7 +60,7 @@ export const ModalForm = styled.form`
 `;
 
 export const ModalTitleInitiated = styled.p`
-  color: #120c07;
+  color: ${() => colors.textShadowColor};
   font-family: 'Roboto';
   font-size: 20px;
   margin-bottom: 5px;
@@ -71,9 +72,10 @@ export const ModalInput = styled.input`
   margin: 0 auto;
   font-size: 20px;
   font-weight: bold;
-  background-color: #e2e2e2;
+  background-color: ${() => colors.secondaryColor};
 
   &: hover {
-    box-shadow: #ffe724 0px 5px 10px, #ffe724 0px 2px 5px;
+    box-shadow: ${() => colors.accentColor} 0px 5px 10px,
+      ${() => colors.accentColor} 0px 2px 5px;
   }
 `;

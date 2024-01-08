@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from 'theme';
 
 export const ContactsList = styled.ul`
   display: flex;
@@ -12,9 +13,9 @@ export const ContactItem = styled.li`
   font-family: 'Roboto';
   font-size: 35px;
   font-weight: bold;
-  color: #222326;
+  color: ${() => colors.primaryColor};
   text-align: center;
-  text-shadow: #120c07 2px 0 1px;
+  text-shadow: ${() => colors.textShadowColor} 2px 0 1px;
   margin: 0 auto 5px;
   list-style: none;
   display: flex;
@@ -22,23 +23,23 @@ export const ContactItem = styled.li`
   width: 750px;
   border-radius: 6px;
   padding: 12px 20px;
-  border: 1px solid #ffe724;
+  border: 1px solid ${() => colors.accentColor};
   box-sizing: border-box;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px ${() => colors.boxShadow};
 
   &: hover {
-    box-shadow: #ffe724 0px 10px 10px 0px;
+    box-shadow: ${() => colors.accentColor} 0px 10px 10px 0px;
   }
 `;
 
 export const ListPhone = styled.span`
   margin-left: 10px;
-  color: #120c07;
+  color: ${() => colors.textShadowColor};
 `;
 
 export const ButtonDelete = styled.button`
-  background-color: #ffe724;
-  color: #120c07;
+  background-color: ${() => colors.accentColor};
+  color: ${() => colors.textShadowColor};
   font-family: 'Roboto';
   font-size: 30px;
   border: none;
@@ -47,14 +48,14 @@ export const ButtonDelete = styled.button`
   width: 50px;
   margin-left: 10px;
   vertical-align: top;
-  box-shadow: 2px 2px 1px 0px #120c07;
+  box-shadow: 2px 2px 1px 0px ${() => colors.textShadowColor};
 
   &: hover {
     outline-color: transparent;
     transition: 0.3s;
     transform: scale(1.03);
-    border: 1px solid #120c07;
-    box-shadow: 10px 10px 5px -5px #120c07;
+    border: 1px solid ${() => colors.textShadowColor};
+    box-shadow: 10px 10px 5px -5px ${() => colors.textShadowColor};
     font-weight: bold;
   }
 `;

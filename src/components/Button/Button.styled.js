@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { colors } from 'theme';
 
 export const Button = styled.button`
-  background-color: #ffe724;
-  color: #120c07;
-  box-shadow: 5px 5px 2px 0px #120c07;
+  background-color: ${() => colors.accentColor};
+  color: ${() => colors.textShadowColor};
+  box-shadow: 5px 5px 2px 0px ${() => colors.textShadowColor};
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 25px;
@@ -17,9 +18,8 @@ export const Button = styled.button`
   &: hover {
     outline-color: transparent;
     outline-style: solid;
-    box-shadow: 10px 10px 5px 0px #120c07;
+    box-shadow: 10px 10px 5px 0px ${() => colors.textShadowColor};
     transition: 0.3s;
-    border: 1px solid #120c07;
+    border: 1px solid ${() => colors.textShadowColor};
   }
 `;
-
