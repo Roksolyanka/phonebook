@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { colors } from 'theme';
 
 export const Header = styled.header`
   padding: 30px;
@@ -20,9 +21,9 @@ export const NavRight = styled.nav`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  background-color: #ffe724;
-  color: #120c07;
-  box-shadow: 5px 5px 2px 0px #120c07;
+  background-color: ${() => colors.accentColor};
+  color: ${() => colors.textShadowColor};
+  box-shadow: 5px 5px 2px 0px ${() => colors.textShadowColor};
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 25px;
@@ -36,15 +37,15 @@ export const StyledNavLink = styled(NavLink)`
   &: hover {
     outline-color: transparent;
     outline-style: solid;
-    box-shadow: 10px 10px 5px 0px #120c07;
+    box-shadow: 10px 10px 5px 0px ${() => colors.textShadowColor};
     transition: 0.3s;
-    border: 1px solid #120c07;
+    border: 1px solid ${() => colors.textShadowColor};
   }
 
   &.active {
-    background-color: #120c07;
-    color: #ffe724;
-    box-shadow: 5px 5px 2px 0px #ffe724;
+    background-color: ${() => colors.textShadowColor};
+    color: ${() => colors.accentColor};
+    box-shadow: 5px 5px 2px 0px ${() => colors.accentColor};
   }
 `;
 
@@ -52,8 +53,8 @@ export const Welcome = styled.span`
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 25px;
-  color: #120c07;
-  text-shadow: 0 1px 0 #120c07;
+  color: ${() => colors.textShadowColor};
+  text-shadow: 0 1px 0 ${() => colors.textShadowColor};
   position: absolute;
   top: 50%;
   margin-top: -15px;
@@ -61,9 +62,9 @@ export const Welcome = styled.span`
 `;
 
 export const ButtonLogOut = styled.button`
-  background-color: #ffe724;
-  color: #120c07;
-  box-shadow: 5px 5px 2px 0px #120c07;
+  background-color: ${() => colors.accentColor};
+  color: ${() => colors.textShadowColor};
+  box-shadow: 5px 5px 2px 0px ${() => colors.textShadowColor};
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 25px;
@@ -76,29 +77,29 @@ export const ButtonLogOut = styled.button`
   &: hover {
     outline-color: transparent;
     outline-style: solid;
-    box-shadow: 10px 10px 5px 0px #120c07;
+    box-shadow: 10px 10px 5px 0px ${() => colors.textShadowColor};
     transition: 0.3s;
-    border: 1px solid #120c07;
+    border: 1px solid ${() => colors.textShadowColor};
   }
 `;
 
 export const Footer = styled.footer`
   padding: 20px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 -1px 1px #ffe724;
-  color: #ffe724;
-  text-shadow: 0 1px 0 #120c07;
+  border-top: 1px solid ${() => colors.boxShadow};
+  box-shadow: 0 -1px 1px ${() => colors.accentColor};
+  color: ${() => colors.accentColor};
+  text-shadow: 0 1px 0 ${() => colors.textShadowColor};
   text-align: center;
 `;
 
 export const Creator = styled.a`
-  color: #ffe724;
-  text-shadow: 0 1px 0 #120c07;
+  color: ${() => colors.accentColor};
+  text-shadow: 0 1px 0 ${() => colors.textShadowColor};
 
   &: hover {
-    box-shadow: 10px 10px 5px 0px #ffe724;
+    box-shadow: 10px 10px 5px 0px ${() => colors.accentColor};
     transition: 0.3s;
-    color: #120c07;
+    color: ${() => colors.textShadowColor};
   }
 `;
 
@@ -107,10 +108,11 @@ export const TitlePhonebook = styled.h1`
   font-size: 100px;
   font-weight: bold;
   width: 100%;
-  color: #e2e2e2;
+  color: ${() => colors.secondaryColor};
   text-align: center;
-  text-shadow: #120c07 10px 0 5px;
+  text-shadow: ${() => colors.textShadowColor} 10px 0 5px;
   margin-bottom: 20px;
   margin-top: 20px;
-  box-shadow: #ffe724 0px 20px 30px, #ffe724 0px 2px 5px;
+  box-shadow: ${() => colors.accentColor} 0px 20px 30px,
+    ${() => colors.accentColor} 0px 2px 5px;
 `;

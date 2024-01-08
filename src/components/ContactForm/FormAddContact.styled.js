@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from 'theme';
 
 export const ContainerForm = styled.div`
   margin-top: 100px;
@@ -9,18 +10,18 @@ export const Form = styled.form`
   display: grid;
   width: 600px;
   margin: 0 auto;
-  border: 2px solid #ffe724;
+  border: 2px solid ${() => colors.accentColor};
   border-radius: 4px;
-  box-shadow: #ffe724 5px 0 5px;
+  box-shadow: ${() => colors.accentColor} 5px 0 5px;
   padding-top: 20px;
   font-family: 'Roboto';
   font-size: 40px;
   font-weight: bold;
 
   text-align: center;
-  color: #e2e2e2;
+  color: ${() => colors.secondaryColor};
   text-align: center;
-  text-shadow: #120c07 5px 0 1px;
+  text-shadow: ${() => colors.textShadowColor} 5px 0 1px;
   position: sticky;
   top: 50px;
 `;
@@ -31,9 +32,10 @@ export const Input = styled.input`
   margin: 0 auto;
   font-size: 20px;
   font-weight: bold;
-  background-color: #e2e2e2;
+  background-color: ${() => colors.secondaryColor};
 
   &: hover {
-    box-shadow: #ffe724 0px 5px 10px, #ffe724 0px 2px 5px;
+    box-shadow: ${() => colors.accentColor} 0px 5px 10px,
+      ${() => colors.accentColor} 0px 2px 5px;
   }
 `;
