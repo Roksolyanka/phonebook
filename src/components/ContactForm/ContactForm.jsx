@@ -50,7 +50,7 @@ export const ContactForm = () => {
           name="contactName"
           value={contactName}
           onChange={e => setContactName(e.target.value)}
-          required
+          // required
         />
 
         <label>Number: </label>
@@ -59,7 +59,7 @@ export const ContactForm = () => {
           name="contactNumber"
           value={contactNumber}
           onChange={e => setContactNumber(e.target.value)}
-          required
+          // required
         />
 
         <Button type="submit">Add contact</Button>
@@ -69,5 +69,5 @@ export const ContactForm = () => {
 };
 
 ContactForm.propTypes = {
-  contacts: PropTypes.array.isRequired,
+  contacts: PropTypes.array,
 };
