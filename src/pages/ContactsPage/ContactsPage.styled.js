@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from 'theme';
 
 export const Container = styled.div`
   display: flex;
@@ -11,9 +12,9 @@ export const TitleContacts = styled.h2`
   font-family: 'Roboto';
   font-size: 70px;
   font-weight: bold;
-  color: #e2e2e2;
+  color: ${() => colors.secondaryColor};
   text-align: center;
-  text-shadow: #120c07 10px 0 5px;
+  text-shadow: ${() => colors.textShadowColor} 10px 0 5px;
   margin-top: 10px;
   margin-bottom: 10px;
 `;
@@ -26,7 +27,7 @@ export const NoContacts = styled.p`
   font-family: 'Roboto';
   font-size: 30px;
   font-weight: bold;
-  color: #120c07;
+  color: ${() => colors.textShadowColor};
   text-align: center;
   margin-top: 100px;
 `;
