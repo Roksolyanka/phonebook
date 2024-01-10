@@ -22,6 +22,7 @@ export const InputFind = styled.input`
   font-weight: bold;
   background-color: ${() => colors.secondaryColor};
 
+  
   &: hover, focus {
     box-shadow: ${() => colors.accentColor} 0px 10px 20px,
       ${() => colors.accentColor} 0px 2px 5px;
