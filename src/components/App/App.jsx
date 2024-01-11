@@ -12,6 +12,20 @@ const ContactsPage = lazy(() => import('../../pages/ContactsPage/Contacts'));
 const RegisterPage = lazy(() => import('../../pages/RegisterPage/Register'));
 const LoginPage = lazy(() => import('../../pages/LoginPage/Login'));
 
+const routes = [
+  { path: '/', element: <HomePage /> },
+  {
+    path: '/contacts',
+    element: (
+      <PrivateRoute redirectTo="/login">
+        <ContactsPage />
+      </PrivateRoute>
+    ),
+  },
+  { path: '/login', element: <LoginPage /> },
+  { path: '/register', element: <RegisterPage /> },
+];
+
 export const App = () => {
   return (
     <div id="app-container">
@@ -19,17 +33,9 @@ export const App = () => {
       <main>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route
-              path="/contacts"
-              element={
-                <PrivateRoute redirectTo="/login">
-                  <ContactsPage />
-                </PrivateRoute>
-              }
-            />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
           </Routes>
         </Suspense>
       </main>
