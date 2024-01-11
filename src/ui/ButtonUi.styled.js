@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors } from 'theme';
 
-export const Button = styled.button`
+export const ButtonUi = styled.button`
   background-color: ${() => colors.accentColor};
   color: ${() => colors.textShadowColor};
   box-shadow: 5px 5px 2px 0px ${() => colors.textShadowColor};

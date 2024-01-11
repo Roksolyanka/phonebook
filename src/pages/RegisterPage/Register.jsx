@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { registerUserThunk } from 'redux/operations';
 import { selectAuthentificated } from 'redux/selectors';
 
-import { Button } from 'components/Button/Button.styled';
+import { ButtonUi } from 'ui/ButtonUi.styled';
 import {
   Backdrop,
   Box,
@@ -73,7 +73,7 @@ const RegisterPage = () => {
               />
             </label>
             <br />
-            <Button type="submit">Sign up</Button>
+            <ButtonUi type="submit">Sign up</ButtonUi>
           </ModalForm>
         </Wrapper>
       </Box>
