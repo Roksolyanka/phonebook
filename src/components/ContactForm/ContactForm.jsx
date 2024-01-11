@@ -7,7 +7,7 @@ import { selectUserContacts } from 'redux/selectors';
 
 import Notiflix from 'notiflix';
 
-import { Button } from 'components/Button/Button.styled';
+import { ButtonUi } from 'ui/ButtonUi.styled';
 import { ContainerForm, Form, Input } from './FormAddContact.styled';
 
 export const ContactForm = () => {
@@ -62,7 +62,7 @@ export const ContactForm = () => {
           required
         />
 
-        <Button type="submit">Add contact</Button>
+        <ButtonUi type="submit">Add contact</ButtonUi>
       </Form>
     </ContainerForm>
   );
