@@ -1,9 +1,12 @@
-import { Creator, FooterStyle } from "./Footer.styled";
+import { getCurrentYear } from 'helpers/helper';
+import { Creator, FooterStyle } from './Footer.styled';
 
 export const Footer = () => {
-    return (
+  const currentYear = getCurrentYear();
+
+  return (
     <FooterStyle>
-      <span>© 2023 Created by </span>
+      <span>© {currentYear} Created by </span>
       <Creator href="https://github.com/Roksolyanka">Roksolana Kushnir</Creator>
     </FooterStyle>
   );
