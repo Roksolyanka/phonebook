@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginUserThunk } from 'redux/operations';
 import { selectAuthentificated } from 'redux/selectors';
 
-import { Button } from 'components/Button/Button.styled';
+import { ButtonUi } from 'ui/ButtonUi.styled';
 import {
   Backdrop,
   Box,
@@ -61,7 +61,7 @@ const LoginPage = () => {
               />
             </label>
             <br />
-            <Button type="submit">Sign in</Button>
+            <ButtonUi type="submit">Sign in</ButtonUi>
           </ModalForm>
         </Wrapper>
       </Box>
