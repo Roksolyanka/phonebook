@@ -4,8 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 
-import { Creator, Footer } from 'components/App/App.styled';
 import { Header } from 'components/Header/Header';
+import { Footer } from 'components/Footer/Footer';
 
 const HomePage = lazy(() => import('../../pages/HomePage/Home'));
 const ContactsPage = lazy(() => import('../../pages/ContactsPage/Contacts'));
@@ -33,12 +33,7 @@ export const App = () => {
           </Routes>
         </Suspense>
       </main>
-      <Footer>
-        <span>© 2023 Created by </span>
-        <Creator href="https://github.com/Roksolyanka">
-          Roksolana Kushnir
-        </Creator>
-      </Footer>
+      <Footer></Footer>
     </div>
   );
 };
