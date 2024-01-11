@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/phonebook/static/css/main.c0851edf.css",
-    "main.js": "/phonebook/static/js/main.3192dc6e.js",
-    "static/js/630.3aebc5ee.chunk.js": "/phonebook/static/js/630.3aebc5ee.chunk.js",
-    "static/js/635.95754b64.chunk.js": "/phonebook/static/js/635.95754b64.chunk.js",
-    "static/js/79.bde0d690.chunk.js": "/phonebook/static/js/79.bde0d690.chunk.js",
-    "static/js/983.75215cd3.chunk.js": "/phonebook/static/js/983.75215cd3.chunk.js",
+    "main.js": "/phonebook/static/js/main.b3de8f61.js",
+    "static/js/875.21087375.chunk.js": "/phonebook/static/js/875.21087375.chunk.js",
+    "static/js/635.3df6f50d.chunk.js": "/phonebook/static/js/635.3df6f50d.chunk.js",
+    "static/js/79.5ef0a7d3.chunk.js": "/phonebook/static/js/79.5ef0a7d3.chunk.js",
+    "static/js/983.b357cce2.chunk.js": "/phonebook/static/js/983.b357cce2.chunk.js",
     "static/media/phonebook.png": "/phonebook/static/media/phonebook.3365eee4af62a5d875a8.png",
     "index.html": "/phonebook/index.html",
     "main.c0851edf.css.map": "/phonebook/static/css/main.c0851edf.css.map",
-    "main.3192dc6e.js.map": "/phonebook/static/js/main.3192dc6e.js.map",
-    "630.3aebc5ee.chunk.js.map": "/phonebook/static/js/630.3aebc5ee.chunk.js.map",
-    "635.95754b64.chunk.js.map": "/phonebook/static/js/635.95754b64.chunk.js.map",
-    "79.bde0d690.chunk.js.map": "/phonebook/static/js/79.bde0d690.chunk.js.map",
-    "983.75215cd3.chunk.js.map": "/phonebook/static/js/983.75215cd3.chunk.js.map"
+    "main.b3de8f61.js.map": "/phonebook/static/js/main.b3de8f61.js.map",
+    "875.21087375.chunk.js.map": "/phonebook/static/js/875.21087375.chunk.js.map",
+    "635.3df6f50d.chunk.js.map": "/phonebook/static/js/635.3df6f50d.chunk.js.map",
+    "79.5ef0a7d3.chunk.js.map": "/phonebook/static/js/79.5ef0a7d3.chunk.js.map",
+    "983.b357cce2.chunk.js.map": "/phonebook/static/js/983.b357cce2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c0851edf.css",
-    "static/js/main.3192dc6e.js"
+    "static/js/main.b3de8f61.js"
   ]
 }
