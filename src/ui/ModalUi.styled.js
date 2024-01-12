@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors } from 'theme';
 
-export const Backdrop = styled.div`
+export const ModalBackdropUi = styled.div`
   position: fixed;
   top: 80px;
   left: 0;
@@ -20,7 +20,7 @@ export const Backdrop = styled.div`
   }
 `;
 
-export const Box = styled.div`
+export const ModalBoxUi = styled.div`
   background-color: ${() => colors.backgroundColor};
   position: relative;
   box-shadow: 1px 1px 14px 4px ${() => colors.accentColor};
@@ -42,7 +42,7 @@ export const Box = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
+export const ModalFirstWrapperUi = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -50,16 +50,16 @@ export const Wrapper = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-export const ModalTitle = styled.h1`
+export const ModalTitleUi = styled.h1`
   text-align: center;
   color: ${() => colors.textShadowColor};
 `;
 
-export const ModalForm = styled.form`
+export const ModalFormUi = styled.form`
   text-align: center;
 `;
 
-export const ModalWrapper = styled.div`
+export const ModalSecondWrapperUi = styled.div`
   display: grid;
   color: ${() => colors.textShadowColor};
   font-family: 'Roboto';
@@ -67,7 +67,7 @@ export const ModalWrapper = styled.div`
   margin-bottom: 5px;
 `;
 
-export const ModalInput = styled.input`
+export const ModalInputUi = styled.input`
   width: 300px;
   height: 25px;
   margin: 0 auto;
