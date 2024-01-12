@@ -7,14 +7,14 @@ import { selectAuthentificated } from 'redux/selectors';
 
 import { ButtonUi } from 'ui/ButtonUi.styled';
 import {
-  Backdrop,
-  Box,
-  ModalForm,
-  ModalInput,
-  ModalTitle,
-  ModalWrapper,
-  Wrapper,
-} from 'components/Modal/Modal.styled';
+  ModalBackdropUi,
+  ModalBoxUi,
+  ModalFirstWrapperUi,
+  ModalFormUi,
+  ModalInputUi,
+  ModalSecondWrapperUi,
+  ModalTitleUi,
+} from 'ui/ModalUi.styled';
 import { InputComponent } from 'components/Input/Input';
 
 const LoginPage = () => {
@@ -35,11 +35,11 @@ const LoginPage = () => {
   if (authentificated) return <Navigate to="/contacts" />;
 
   return (
-    <Backdrop>
-      <Box>
-        <Wrapper>
-          <ModalTitle>Login Into Your Account</ModalTitle>
-          <ModalForm onSubmit={handleSubmit}>
+    <ModalBackdropUi>
+      <ModalBoxUi>
+        <ModalFirstWrapperUi>
+          <ModalTitleUi>Login Into Your Account</ModalTitleUi>
+          <ModalFormUi onSubmit={handleSubmit}>
             <InputComponent
               label="Email:"
               name="userEmail"
@@ -47,8 +47,8 @@ const LoginPage = () => {
               required
               minLength={2}
               autoComplete="email"
-              wrapperStyle={ModalWrapper}
-              inputStyle={ModalInput}
+              wrapperStyle={ModalSecondWrapperUi}
+              inputStyle={ModalInputUi}
             />
             <br />
             <InputComponent
@@ -58,14 +58,14 @@ const LoginPage = () => {
               required
               minLength={7}
               autoComplete="current-password"
-              wrapperStyle={ModalWrapper}
-              inputStyle={ModalInput}
+              wrapperStyle={ModalSecondWrapperUi}
+              inputStyle={ModalInputUi}
             />
             <ButtonUi type="submit">Sign in</ButtonUi>
-          </ModalForm>
-        </Wrapper>
-      </Box>
-    </Backdrop>
+          </ModalFormUi>
+        </ModalFirstWrapperUi>
+      </ModalBoxUi>
+    </ModalBackdropUi>
   );
 };
 
