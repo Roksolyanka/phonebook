@@ -12,9 +12,10 @@ import {
   ModalForm,
   ModalInput,
   ModalTitle,
-  ModalTitleInitiated,
+  ModalWrapper,
   Wrapper,
 } from 'components/Modal/Modal.styled';
+import { InputComponent } from 'components/Input/Input';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -39,28 +40,27 @@ const LoginPage = () => {
         <Wrapper>
           <ModalTitle>Login Into Your Account</ModalTitle>
           <ModalForm onSubmit={handleSubmit}>
-            <label>
-              <ModalTitleInitiated>Email:</ModalTitleInitiated>
-              <ModalInput
-                name="userEmail"
-                type="email"
-                required
-                minLength={2}
-                autoComplete="email"
-              />
-            </label>
+            <InputComponent
+              label="Email:"
+              name="userEmail"
+              type="email"
+              required
+              minLength={2}
+              autoComplete="email"
+              wrapperStyle={ModalWrapper}
+              inputStyle={ModalInput}
+            />
             <br />
-            <label>
-              <ModalTitleInitiated>Password:</ModalTitleInitiated>
-              <ModalInput
-                name="userPassword"
-                type="password"
-                required
-                minLength={7}
-                autoComplete="current-password"
-              />
-            </label>
-            <br />
+            <InputComponent
+              label="Password:"
+              name="userPassword"
+              type="password"
+              required
+              minLength={7}
+              autoComplete="current-password"
+              wrapperStyle={ModalWrapper}
+              inputStyle={ModalInput}
+            />
             <ButtonUi type="submit">Sign in</ButtonUi>
           </ModalForm>
         </Wrapper>

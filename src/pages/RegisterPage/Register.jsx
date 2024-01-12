@@ -12,9 +12,10 @@ import {
   ModalForm,
   ModalInput,
   ModalTitle,
-  ModalTitleInitiated,
+  ModalWrapper,
   Wrapper,
 } from 'components/Modal/Modal.styled';
+import { InputComponent } from 'components/Input/Input';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -40,39 +41,38 @@ const RegisterPage = () => {
         <Wrapper>
           <ModalTitle>Register Your Account</ModalTitle>
           <ModalForm onSubmit={handleSubmit}>
-            <label>
-              <ModalTitleInitiated>Name:</ModalTitleInitiated>
-              <ModalInput
-                name="userName"
-                type="text"
-                required
-                minLength={2}
-                autoComplete="userName"
-              />
-            </label>
+            <InputComponent
+              label="Name:"
+              type="text"
+              name="userName"
+              required
+              minLength={2}
+              autoComplete="userName"
+              wrapperStyle={ModalWrapper}
+              inputStyle={ModalInput}
+            />
             <br />
-            <label>
-              <ModalTitleInitiated>Email:</ModalTitleInitiated>
-              <ModalInput
-                name="userEmail"
-                type="email"
-                required
-                minLength={2}
-                autoComplete="email"
-              />
-            </label>
+            <InputComponent
+              label="Email:"
+              name="userEmail"
+              type="email"
+              required
+              minLength={2}
+              autoComplete="email"
+              wrapperStyle={ModalWrapper}
+              inputStyle={ModalInput}
+            />
             <br />
-            <label>
-              <ModalTitleInitiated>Password:</ModalTitleInitiated>
-              <ModalInput
-                name="userPassword"
-                type="password"
-                required
-                minLength={7}
-                autoComplete="current-password"
-              />
-            </label>
-            <br />
+            <InputComponent
+              label="Password:"
+              name="userPassword"
+              type="password"
+              required
+              minLength={7}
+              autoComplete="current-password"
+              wrapperStyle={ModalWrapper}
+              inputStyle={ModalInput}
+            />
             <ButtonUi type="submit">Sign up</ButtonUi>
           </ModalForm>
         </Wrapper>

@@ -20,13 +20,18 @@ export const Form = styled.form`
 
   text-align: center;
   color: ${() => colors.secondaryColor};
-  text-align: center;
   text-shadow: ${() => colors.textShadowColor} 5px 0 1px;
   position: sticky;
   top: 50px;
 `;
 
-export const Input = styled.input`
+export const WrapperStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const InputStyle = styled.input`
   width: 550px;
   height: 25px;
   margin: 0 auto;

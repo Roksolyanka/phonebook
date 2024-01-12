@@ -59,7 +59,8 @@ export const ModalForm = styled.form`
   text-align: center;
 `;
 
-export const ModalTitleInitiated = styled.p`
+export const ModalWrapper = styled.div`
+  display: grid;
   color: ${() => colors.textShadowColor};
   font-family: 'Roboto';
   font-size: 20px;

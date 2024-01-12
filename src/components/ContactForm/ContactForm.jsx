@@ -8,7 +8,13 @@ import { selectUserContacts } from 'redux/selectors';
 import Notiflix from 'notiflix';
 
 import { ButtonUi } from 'ui/ButtonUi.styled';
-import { ContainerForm, Form, Input } from './FormAddContact.styled';
+import {
+  ContainerForm,
+  Form,
+  InputStyle,
+  WrapperStyle,
+} from './FormAddContact.styled';
+import { InputComponent } from 'components/Input/Input';
 
 export const ContactForm = () => {
   const contacts = useSelector(selectUserContacts);
@@ -44,24 +50,26 @@ export const ContactForm = () => {
   return (
     <ContainerForm>
       <Form onSubmit={handleSubmit}>
-        <label>Name: </label>
-        <Input
+        <InputComponent
+          label="Name:"
           type="text"
           name="contactName"
           value={contactName}
           onChange={e => setContactName(e.target.value)}
           required
+          wrapperStyle={WrapperStyle}
+          inputStyle={InputStyle}
         />
-
-        <label>Number: </label>
-        <Input
+        <InputComponent
+          label="Number:"
           type="text"
           name="contactNumber"
           value={contactNumber}
           onChange={e => setContactNumber(e.target.value)}
           required
+          wrapperStyle={WrapperStyle}
+          inputStyle={InputStyle}
         />
-
         <ButtonUi type="submit">Add contact</ButtonUi>
       </Form>
     </ContainerForm>
