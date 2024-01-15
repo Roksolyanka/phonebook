@@ -14,7 +14,6 @@ export const Form = styled.form`
   border-radius: 4px;
   box-shadow: ${() => colors.accentColor} 5px 0 5px;
   padding-top: 20px;
-  font-family: 'Roboto';
   font-size: 40px;
   font-weight: bold;
 

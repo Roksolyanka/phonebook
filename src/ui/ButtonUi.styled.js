@@ -16,10 +16,8 @@ export const ButtonUi = styled.button`
   margin: 20px auto;
 
   &: hover {
-    outline-color: transparent;
-    outline-style: solid;
-    box-shadow: 10px 10px 5px 0px ${() => colors.textShadowColor};
-    transition: 0.3s;
-    border: 1px solid ${() => colors.textShadowColor};
+    background-color: ${() => colors.textShadowColor};
+    color: ${() => colors.accentColor};
+    box-shadow: 5px 5px 2px 0px ${() => colors.accentColor};
   }
 `;
