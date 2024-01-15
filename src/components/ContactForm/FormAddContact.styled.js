@@ -5,6 +5,7 @@ import { InputUi } from 'ui/InputUi.styled';
 export const ContainerForm = styled.div`
   margin-top: 100px;
   padding-left: 30px;
+  min-height: 500px;
 `;
 
 export const Form = styled.form`
@@ -17,7 +18,6 @@ export const Form = styled.form`
   padding-top: 20px;
   font-size: 40px;
   font-weight: bold;
-
   text-align: center;
   color: ${() => colors.secondaryColor};
   text-shadow: ${() => colors.textShadowColor} 5px 0 1px;
