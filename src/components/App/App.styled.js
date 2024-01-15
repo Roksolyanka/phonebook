@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { colors } from 'theme';
 
 export const TitlePhonebook = styled.h1`
-  font-family: 'Roboto';
   font-size: 100px;
   font-weight: bold;
   width: 100%;
