@@ -28,8 +28,14 @@ export const ContactForm = () => {
 
     const form = event.currentTarget;
 
-    const name = form.elements.contactName.value.trim();
+    let name = form.elements.contactName.value.trim();
     const number = form.elements.contactNumber.value.trim();
+
+    const nameWords = name.split(' ');
+
+    name = nameWords
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
 
     if (contacts.some(contact => contact.name === name))
       return Notiflix.Notify.info(`Contact with name ${name} already exists!`);

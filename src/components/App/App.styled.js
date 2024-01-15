@@ -8,8 +8,8 @@ export const TitlePhonebook = styled.h1`
   color: ${() => colors.secondaryColor};
   text-align: center;
   text-shadow: ${() => colors.textShadowColor} 10px 0 5px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   box-shadow: ${() => colors.accentColor} 0px 20px 30px,
     ${() => colors.accentColor} 0px 2px 5px;
 `;
