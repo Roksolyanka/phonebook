@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from 'theme';
+import { InputUi } from 'ui/InputUi.styled';
 
 export const FilterStyled = styled.label`
   display: block;
@@ -12,15 +13,11 @@ export const FilterStyled = styled.label`
   margin-bottom: 30px;
 `;
 
-export const InputFind = styled.input`
+export const InputFind = styled(InputUi)`
   width: 320px;
   height: 40px;
   margin-left: 10px;
   vertical-align: top;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: ${() => colors.secondaryColor};
-
   
   &: hover, focus {
     box-shadow: ${() => colors.accentColor} 0px 10px 20px,

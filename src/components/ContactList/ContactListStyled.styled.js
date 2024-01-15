@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from 'theme';
+import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const ContactsList = styled.ul`
   display: flex;
@@ -36,20 +37,10 @@ export const ListPhone = styled.span`
   color: ${() => colors.textShadowColor};
 `;
 
-export const ButtonDelete = styled.button`
-  background-color: ${() => colors.accentColor};
-  color: ${() => colors.textShadowColor};
-  box-shadow: 5px 5px 2px 0px ${() => colors.textShadowColor};
+export const ButtonDelete = styled(ButtonUi)`
   font-size: 30px;
-  border: none;
   border-radius: 5px;
+  padding: 0;
   width: 50px;
-  max-height: auto;
-  margin-left: 10px;
-
-  &: hover {
-    background-color: ${() => colors.textShadowColor};
-    color: ${() => colors.accentColor};
-    box-shadow: 5px 5px 2px 0px ${() => colors.accentColor};
-  }
+  margin: 10px 0;
 `;
