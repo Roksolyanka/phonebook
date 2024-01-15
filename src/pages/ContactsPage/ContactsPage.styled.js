@@ -9,7 +9,6 @@ export const Container = styled.div`
 `;
 
 export const TitleContacts = styled.h2`
-  font-family: 'Roboto';
   font-size: 70px;
   font-weight: bold;
   color: ${() => colors.secondaryColor};
@@ -24,7 +23,6 @@ export const ContactsContainer = styled.div`
 `;
 
 export const NoContacts = styled.p`
-  font-family: 'Roboto';
   font-size: 30px;
   font-weight: bold;
   color: ${() => colors.textShadowColor};

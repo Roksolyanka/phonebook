@@ -10,7 +10,6 @@ export const ContactsList = styled.ul`
 `;
 
 export const ContactItem = styled.li`
-  font-family: 'Roboto';
   font-size: 35px;
   font-weight: bold;
   color: ${() => colors.primaryColor};
@@ -40,22 +39,17 @@ export const ListPhone = styled.span`
 export const ButtonDelete = styled.button`
   background-color: ${() => colors.accentColor};
   color: ${() => colors.textShadowColor};
-  font-family: 'Roboto';
+  box-shadow: 5px 5px 2px 0px ${() => colors.textShadowColor};
   font-size: 30px;
   border: none;
   border-radius: 5px;
-  height: 32px;
   width: 50px;
+  max-height: auto;
   margin-left: 10px;
-  vertical-align: top;
-  box-shadow: 2px 2px 1px 0px ${() => colors.textShadowColor};
 
   &: hover {
-    outline-color: transparent;
-    transition: 0.3s;
-    transform: scale(1.03);
-    border: 1px solid ${() => colors.textShadowColor};
-    box-shadow: 10px 10px 5px -5px ${() => colors.textShadowColor};
-    font-weight: bold;
+    background-color: ${() => colors.textShadowColor};
+    color: ${() => colors.accentColor};
+    box-shadow: 5px 5px 2px 0px ${() => colors.accentColor};
   }
 `;
