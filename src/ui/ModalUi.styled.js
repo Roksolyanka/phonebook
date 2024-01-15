@@ -62,7 +62,6 @@ export const ModalFormUi = styled.form`
 export const ModalSecondWrapperUi = styled.div`
   display: grid;
   color: ${() => colors.textShadowColor};
-  font-family: 'Roboto';
   font-size: 20px;
   margin-bottom: 5px;
 `;

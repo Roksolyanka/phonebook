@@ -3,7 +3,6 @@ import { colors } from 'theme';
 
 export const FilterStyled = styled.label`
   display: block;
-  font-family: 'Roboto';
   font-size: 40px;
   font-weight: bold;
   color: ${() => colors.primaryColor};

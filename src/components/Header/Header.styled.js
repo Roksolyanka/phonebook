@@ -24,9 +24,9 @@ export const StyledNavLink = styled(NavLink)`
   background-color: ${() => colors.accentColor};
   color: ${() => colors.textShadowColor};
   box-shadow: 5px 5px 2px 0px ${() => colors.textShadowColor};
-  font-family: 'Roboto';
   font-weight: bold;
   font-size: 25px;
+  text-decoration: none;
   border: none;
   border-radius: 10px;
   padding: 15px;
@@ -35,22 +35,17 @@ export const StyledNavLink = styled(NavLink)`
   margin-right: 20px;
 
   &: hover {
-    outline-color: transparent;
-    outline-style: solid;
-    box-shadow: 10px 10px 5px 0px ${() => colors.textShadowColor};
-    transition: 0.3s;
-    border: 1px solid ${() => colors.textShadowColor};
-  }
-
-  &.active {
     background-color: ${() => colors.textShadowColor};
     color: ${() => colors.accentColor};
     box-shadow: 5px 5px 2px 0px ${() => colors.accentColor};
   }
+
+  &.active {
+    display: none;
+  }
 `;
 
 export const Welcome = styled.span`
-  font-family: 'Roboto';
   font-weight: bold;
   font-size: 25px;
   color: ${() => colors.textShadowColor};
@@ -75,10 +70,8 @@ export const ButtonLogOut = styled.button`
   max-width: 200px;
 
   &: hover {
-    outline-color: transparent;
-    outline-style: solid;
-    box-shadow: 10px 10px 5px 0px ${() => colors.textShadowColor};
-    transition: 0.3s;
-    border: 1px solid ${() => colors.textShadowColor};
+    background-color: ${() => colors.textShadowColor};
+    color: ${() => colors.accentColor};
+    box-shadow: 5px 5px 2px 0px ${() => colors.accentColor};
   }
 `;
