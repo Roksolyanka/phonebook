@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from 'theme';
+import { InputUi } from 'ui/InputUi.styled';
 
 export const ContainerForm = styled.div`
   margin-top: 100px;
@@ -30,16 +31,6 @@ export const WrapperStyle = styled.div`
   gap: 10px;
 `;
 
-export const InputStyle = styled.input`
+export const InputStyle = styled(InputUi)`
   width: 550px;
-  height: 25px;
-  margin: 0 auto;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: ${() => colors.secondaryColor};
-
-  &: hover {
-    box-shadow: ${() => colors.accentColor} 0px 5px 10px,
-      ${() => colors.accentColor} 0px 2px 5px;
-  }
 `;

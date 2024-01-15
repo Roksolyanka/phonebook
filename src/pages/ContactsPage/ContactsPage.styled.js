@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { colors } from 'theme';
+import { BoxUi } from 'ui/BoxUi.styled';
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
+export const Container = styled(BoxUi)`
+  align-items: flex-start;
   text-align: center;
   gap: 20px;
 `;

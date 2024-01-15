@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { colors } from 'theme';
+import { InputUi } from './InputUi.styled';
+import { BoxUi } from './BoxUi.styled';
 
-export const ModalBackdropUi = styled.div`
+export const ModalBackdropUi = styled(BoxUi)`
   position: fixed;
   top: 80px;
   left: 0;
@@ -10,9 +12,6 @@ export const ModalBackdropUi = styled.div`
   background-color: ${() => colors.backdropColor};
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   &.is-hidden {
     visibility: hidden;
@@ -66,16 +65,6 @@ export const ModalSecondWrapperUi = styled.div`
   margin-bottom: 5px;
 `;
 
-export const ModalInputUi = styled.input`
+export const ModalInputUi = styled(InputUi)`
   width: 300px;
-  height: 25px;
-  margin: 0 auto;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: ${() => colors.secondaryColor};
-
-  &: hover {
-    box-shadow: ${() => colors.accentColor} 0px 5px 10px,
-      ${() => colors.accentColor} 0px 2px 5px;
-  }
 `;
