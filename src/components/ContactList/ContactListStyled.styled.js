@@ -10,10 +10,10 @@ export const ContactsList = styled.ul`
 `;
 
 export const ContactItem = styled.li`
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.primaryColor};
-  text-align: center;
+  align-items: center;
   text-shadow: ${({ theme }) => theme.colors.textShadowColor} 2px 0 1px;
   margin: 0 auto 5px;
   list-style: none;
@@ -34,6 +34,17 @@ export const ContactItem = styled.li`
 export const ListPhone = styled.span`
   margin-left: 10px;
   color: ${({ theme }) => theme.colors.textShadowColor};
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+`;
+
+export const IconPencil = styled.svg`
+  width: 18px;
+  height: 18px;
 `;
 
 export const ButtonDelete = styled(ButtonUi)`

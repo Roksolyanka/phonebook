@@ -18,5 +18,6 @@ export const ButtonUi = styled.button`
     background-color: ${({ theme }) => theme.colors.textShadowColor};
     color: ${({ theme }) => theme.colors.accentColor};
     box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.accentColor};
+    fill: ${({ theme }) => theme.colors.accentColor};
   }
 `;
