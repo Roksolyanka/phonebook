@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'theme';
 import { BoxUi } from 'ui/BoxUi.styled';
 
 export const Container = styled(BoxUi)`
@@ -11,9 +10,9 @@ export const Container = styled(BoxUi)`
 export const TitleContacts = styled.h2`
   font-size: 70px;
   font-weight: bold;
-  color: ${() => colors.secondaryColor};
+  color: ${({ theme }) => theme.colors.secondaryColor};
   text-align: center;
-  text-shadow: ${() => colors.textShadowColor} 10px 0 5px;
+  text-shadow: ${({ theme }) => theme.colors.textShadowColor} 10px 0 5px;
   margin-top: 10px;
   margin-bottom: 10px;
 `;
@@ -25,7 +24,7 @@ export const ContactsContainer = styled.div`
 export const NoContacts = styled.p`
   font-size: 30px;
   font-weight: bold;
-  color: ${() => colors.textShadowColor};
+  color: ${({ theme }) => theme.colors.textShadowColor};
   text-align: center;
   margin-top: 100px;
 `;

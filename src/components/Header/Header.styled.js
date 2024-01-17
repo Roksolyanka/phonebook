@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { colors } from 'theme';
 import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const HeaderStyle = styled.header`
@@ -21,9 +20,9 @@ export const NavRight = styled.nav`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  background-color: ${() => colors.accentColor};
-  color: ${() => colors.textShadowColor};
-  box-shadow: 5px 5px 2px 0px ${() => colors.textShadowColor};
+  background-color: ${({ theme }) => theme.colors.accentColor};
+  color: ${({ theme }) => theme.colors.textShadowColor};
+  box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.textShadowColor};
   font-weight: bold;
   font-size: 25px;
   text-decoration: none;
@@ -35,9 +34,9 @@ export const StyledNavLink = styled(NavLink)`
   margin-right: 20px;
 
   &: hover {
-    background-color: ${() => colors.textShadowColor};
-    color: ${() => colors.accentColor};
-    box-shadow: 5px 5px 2px 0px ${() => colors.accentColor};
+    background-color: ${({ theme }) => theme.colors.textShadowColor};
+    color: ${({ theme }) => theme.colors.accentColor};
+    box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.accentColor};
   }
 
   &.active {
@@ -48,8 +47,8 @@ export const StyledNavLink = styled(NavLink)`
 export const Welcome = styled.span`
   font-weight: bold;
   font-size: 25px;
-  color: ${() => colors.textShadowColor};
-  text-shadow: 0 1px 0 ${() => colors.textShadowColor};
+  color: ${({ theme }) => theme.colors.textShadowColor};
+  text-shadow: 0 1px 0 ${({ theme }) => theme.colors.textShadowColor};
   position: absolute;
   top: 50%;
   margin-top: -15px;
