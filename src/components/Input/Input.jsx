@@ -15,11 +15,13 @@ export const InputComponent = ({
 }) => {
   const Wrapper = wrapperStyle;
   const Input = inputStyle;
+  const htmlFor = `input-${name}`;
   return (
     <Wrapper>
-      <label>{label}</label>
+      <label htmlFor={htmlFor}>{label}</label>
       <Input
         type={type}
+        id={htmlFor}
         name={name}
         value={value}
         onChange={onChange}
