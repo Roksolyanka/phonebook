@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'theme';
 import { InputUi } from './InputUi.styled';
 import { BoxUi } from './BoxUi.styled';
 
@@ -9,7 +8,7 @@ export const ModalBackdropUi = styled(BoxUi)`
   left: 0;
   width: 100%;
   height: 80%;
-  background-color: ${() => colors.backdropColor};
+  background-color: ${({ theme }) => theme.colors.backdropColor};
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -20,9 +19,9 @@ export const ModalBackdropUi = styled(BoxUi)`
 `;
 
 export const ModalBoxUi = styled.div`
-  background-color: ${() => colors.backgroundColor};
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
   position: relative;
-  box-shadow: 1px 1px 14px 4px ${() => colors.accentColor};
+  box-shadow: 1px 1px 14px 4px ${({ theme }) => theme.colors.accentColor};
   border-radius: 16px;
   width: 400px;
   height: 400px;
@@ -51,7 +50,7 @@ export const ModalFirstWrapperUi = styled.div`
 
 export const ModalTitleUi = styled.h1`
   text-align: center;
-  color: ${() => colors.textShadowColor};
+  color: ${({ theme }) => theme.colors.textShadowColor};
 `;
 
 export const ModalFormUi = styled.form`
@@ -60,7 +59,7 @@ export const ModalFormUi = styled.form`
 
 export const ModalSecondWrapperUi = styled.div`
   display: grid;
-  color: ${() => colors.textShadowColor};
+  color: ${({ theme }) => theme.colors.textShadowColor};
   font-size: 20px;
   margin-bottom: 5px;
 `;
