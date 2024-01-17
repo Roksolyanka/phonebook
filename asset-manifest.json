@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/phonebook/static/css/main.d5617b4f.css",
-    "main.js": "/phonebook/static/js/main.0147cf87.js",
-    "static/js/875.b9034d28.chunk.js": "/phonebook/static/js/875.b9034d28.chunk.js",
-    "static/js/635.dd78cabc.chunk.js": "/phonebook/static/js/635.dd78cabc.chunk.js",
-    "static/js/79.e350b533.chunk.js": "/phonebook/static/js/79.e350b533.chunk.js",
-    "static/js/983.2b2ed75a.chunk.js": "/phonebook/static/js/983.2b2ed75a.chunk.js",
+    "main.js": "/phonebook/static/js/main.9f2bbc45.js",
+    "static/js/875.93574033.chunk.js": "/phonebook/static/js/875.93574033.chunk.js",
+    "static/js/635.0c1956c1.chunk.js": "/phonebook/static/js/635.0c1956c1.chunk.js",
+    "static/js/79.5afcd7f3.chunk.js": "/phonebook/static/js/79.5afcd7f3.chunk.js",
+    "static/js/983.78dfe06b.chunk.js": "/phonebook/static/js/983.78dfe06b.chunk.js",
     "static/media/phonebook.png": "/phonebook/static/media/phonebook.3365eee4af62a5d875a8.png",
     "index.html": "/phonebook/index.html",
     "main.d5617b4f.css.map": "/phonebook/static/css/main.d5617b4f.css.map",
-    "main.0147cf87.js.map": "/phonebook/static/js/main.0147cf87.js.map",
-    "875.b9034d28.chunk.js.map": "/phonebook/static/js/875.b9034d28.chunk.js.map",
-    "635.dd78cabc.chunk.js.map": "/phonebook/static/js/635.dd78cabc.chunk.js.map",
-    "79.e350b533.chunk.js.map": "/phonebook/static/js/79.e350b533.chunk.js.map",
-    "983.2b2ed75a.chunk.js.map": "/phonebook/static/js/983.2b2ed75a.chunk.js.map"
+    "main.9f2bbc45.js.map": "/phonebook/static/js/main.9f2bbc45.js.map",
+    "875.93574033.chunk.js.map": "/phonebook/static/js/875.93574033.chunk.js.map",
+    "635.0c1956c1.chunk.js.map": "/phonebook/static/js/635.0c1956c1.chunk.js.map",
+    "79.5afcd7f3.chunk.js.map": "/phonebook/static/js/79.5afcd7f3.chunk.js.map",
+    "983.78dfe06b.chunk.js.map": "/phonebook/static/js/983.78dfe06b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d5617b4f.css",
-    "static/js/main.0147cf87.js"
+    "static/js/main.9f2bbc45.js"
   ]
 }
