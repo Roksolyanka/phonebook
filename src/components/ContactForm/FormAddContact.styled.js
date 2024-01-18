@@ -9,6 +9,7 @@ export const ContainerForm = styled.div`
 
 export const Form = styled.form`
   display: grid;
+  gap: 10px;
   width: 600px;
   margin: 0 auto;
   border: 2px solid ${({ theme }) => theme.colors.accentColor};
