@@ -47,7 +47,7 @@ export const IconPencil = styled.svg`
   height: 18px;
 `;
 
-export const ButtonDelete = styled(ButtonUi)`
+export const Button = styled(ButtonUi)`
   font-size: 30px;
   border-radius: 5px;
   padding: 0;
