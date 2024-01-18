@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Notiflix from 'notiflix';
 
 import {
-  ButtonDelete,
+  Button,
   ButtonWrapper,
   ContactItem,
   ContactsList,
@@ -12,7 +12,7 @@ import {
 } from './ContactListStyled.styled';
 import sprite from '../../assets/sprite.svg';
 
-export const ContactList = ({ contacts, onDeleteContact }) => {
+export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
   const showContacts = Array.isArray(contacts) && contacts.length > 0;
 
   return (
@@ -26,21 +26,16 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
                 <ListPhone>{contact.number}</ListPhone>
               </div>
               <ButtonWrapper>
-                <ButtonDelete
+                <Button
                   aria-label="Edit contact"
                   type="button"
-                  onClick={() => {
-                    // onDeleteContact(contact.id);
-                    // Notiflix.Notify.success(
-                    //   `Contact ${contact.name} successfully deleted.`
-                    // );
-                  }}
+                  onClick={() => onEditContact(contact)}
                 >
                   <IconPencil>
                     <use href={`${sprite}#icon-pencil`}></use>
                   </IconPencil>
-                </ButtonDelete>
-                <ButtonDelete
+                </Button>
+                <Button
                   aria-label="Delete contact"
                   type="button"
                   onClick={() => {
@@ -51,7 +46,7 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
                   }}
                 >
                   &times;
-                </ButtonDelete>
+                </Button>
               </ButtonWrapper>
             </ContactItem>
           );
@@ -69,4 +64,5 @@ ContactList.propTypes = {
     })
   ),
   onDeleteContact: PropTypes.func.isRequired,
+  onEditContact: PropTypes.func.isRequired,
 };
