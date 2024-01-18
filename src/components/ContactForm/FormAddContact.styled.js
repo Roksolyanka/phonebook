@@ -33,3 +33,9 @@ export const WrapperStyle = styled.div`
 export const InputStyle = styled(InputUi)`
   width: 550px;
 `;
+
+export const WrapperForButton = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+`;
