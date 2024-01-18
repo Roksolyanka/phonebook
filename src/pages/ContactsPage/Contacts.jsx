@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -33,6 +33,7 @@ const ContactsPage = () => {
   const isLoading = useSelector(selectContactsIsLoading);
   const error = useSelector(selectContactsError);
   const filter = useSelector(selectContactsFilter);
+  const [editingContact, setEditingContact] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -44,6 +45,10 @@ const ContactsPage = () => {
 
   const handleDeleteContact = contactId => {
     dispatch(deleteContactsThunk(contactId));
+  };
+
+  const handleEditContact = contact => {
+    setEditingContact(contact);
   };
 
   const changeFilter = event => {
@@ -63,7 +68,10 @@ const ContactsPage = () => {
     <section>
       <TitlePhonebook>Phonebook</TitlePhonebook>
       <Container>
-        <ContactForm />
+        <ContactForm
+          editingContact={editingContact}
+          setEditingContact={setEditingContact}
+        />
         <ContactsContainer>
           <TitleContacts>Contacts</TitleContacts>
           {isLoading && <Loader />}
@@ -84,6 +92,7 @@ const ContactsPage = () => {
                   ) : (
                     <ContactList
                       contacts={filteredContacts}
+                      onEditContact={handleEditContact}
                       onDeleteContact={handleDeleteContact}
                     />
                   )}

@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   addContactsThunk,
   deleteContactsThunk,
+  editContactThunk,
   requestContactsThunk,
 } from './contactsOperations';
 
@@ -63,6 +64,24 @@ const contactsSlice = createSlice({
         );
       })
       .addCase(deleteContactsThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+
+      //   ---------------------------EDIT CONTACT--------------------------------
+
+      .addCase(editContactThunk.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(editContactThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        const updatedContact = action.payload;
+        state.contacts = state.contacts.map(contact =>
+          contact.id === updatedContact.id ? updatedContact : contact
+        );
+      })
+      .addCase(editContactThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       }),
