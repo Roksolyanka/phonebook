@@ -16,6 +16,7 @@ export const NavLeft = styled.nav`
 
 export const NavRight = styled.nav`
   display: flex;
+  align-items: center;
   gap: 20px;
 `;
 
@@ -49,10 +50,6 @@ export const Welcome = styled.span`
   font-size: 25px;
   color: ${({ theme }) => theme.colors.textShadowColor};
   text-shadow: 0 1px 0 ${({ theme }) => theme.colors.textShadowColor};
-  position: absolute;
-  top: 50%;
-  margin-top: -15px;
-  right: 180px;
 `;
 
 export const ButtonLogOut = styled(ButtonUi)`

@@ -14,7 +14,6 @@ export const FilterStyled = styled.label`
 
 export const InputFind = styled(InputUi)`
   width: 320px;
-  height: 40px;
   margin-left: 10px;
   vertical-align: top;
 
