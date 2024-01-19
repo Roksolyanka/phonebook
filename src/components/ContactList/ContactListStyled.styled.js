@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BoxUi } from 'ui/BoxUi.styled';
 import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const ContactsList = styled.ul`
@@ -14,6 +15,7 @@ export const ContactItem = styled.li`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.primaryColor};
   align-items: center;
+  text-align: start;
   text-shadow: ${({ theme }) => theme.colors.textShadowColor} 2px 0 1px;
   margin: 0 auto 5px;
   list-style: none;
@@ -29,6 +31,11 @@ export const ContactItem = styled.li`
   &: hover {
     box-shadow: ${({ theme }) => theme.colors.accentColor} 0px 10px 10px 0px;
   }
+`;
+
+export const ContactWrapper = styled(BoxUi)`
+  flex-direction: column;
+  align-items: start;
 `;
 
 export const ListPhone = styled.span`

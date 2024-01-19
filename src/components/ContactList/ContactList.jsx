@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Notiflix from 'notiflix';
-
 import {
   Button,
   ButtonWrapper,
   ContactItem,
+  ContactWrapper,
   ContactsList,
   IconPencil,
   ListPhone,
 } from './ContactListStyled.styled';
 import sprite from '../../assets/sprite.svg';
+import ModalDelete from 'components/ModalDelete/ModalDelete';
 
 export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedContact, setSelectedContact] = useState(null);
   const showContacts = Array.isArray(contacts) && contacts.length > 0;
+
+  const openModal = contact => {
+    setSelectedContact(contact);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setSelectedContact(null);
+    setShowModal(false);
+  };
 
   return (
     <ContactsList>
@@ -21,10 +34,10 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
         contacts.map(contact => {
           return (
             <ContactItem key={contact.id}>
-              <div>
-                <span>{contact.name}</span>:
+              <ContactWrapper>
+                <span>{contact.name}:</span>
                 <ListPhone>{contact.number}</ListPhone>
-              </div>
+              </ContactWrapper>
               <ButtonWrapper>
                 <Button
                   aria-label="Edit contact"
@@ -38,12 +51,7 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
                 <Button
                   aria-label="Delete contact"
                   type="button"
-                  onClick={() => {
-                    onDeleteContact(contact.id);
-                    Notiflix.Notify.success(
-                      `Contact ${contact.name} successfully deleted.`
-                    );
-                  }}
+                  onClick={() => openModal(contact)}
                 >
                   &times;
                 </Button>
@@ -51,6 +59,19 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
             </ContactItem>
           );
         })}
+      {showModal && (
+        <ModalDelete
+          contact={selectedContact}
+          onDeleteContact={contactId => {
+            onDeleteContact(contactId);
+            Notiflix.Notify.success(
+              `Contact ${selectedContact.name} successfully deleted.`
+            );
+            closeModal();
+          }}
+          onNoDeleteContact={closeModal}
+        />
+      )}
     </ContactsList>
   );
 };
