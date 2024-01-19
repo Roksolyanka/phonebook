@@ -4,7 +4,7 @@ import { InputUi } from 'ui/InputUi.styled';
 export const ContainerForm = styled.div`
   margin-top: 100px;
   padding-left: 30px;
-  min-height: 500px;
+  height: 100vh;
 `;
 
 export const Form = styled.form`
