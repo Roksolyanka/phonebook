@@ -11,21 +11,21 @@ export const ContactsList = styled.ul`
 `;
 
 export const ContactItem = styled.li`
-  font-size: 30px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.primaryColor};
-  align-items: center;
-  text-align: start;
-  text-shadow: ${({ theme }) => theme.colors.textShadowColor} 2px 0 1px;
-  margin: 0 auto 5px;
-  list-style: none;
   display: flex;
   justify-content: space-between;
-  width: 750px;
-  border-radius: 6px;
+  align-items: center;
+  text-align: start;
+  font-size: 30px;
+  font-weight: bold;
+  list-style: none;
+  width: 600px;
   padding: 12px 20px;
-  border: 1px solid ${({ theme }) => theme.colors.accentColor};
+  margin: 0 auto 5px;
   box-sizing: border-box;
+  border-radius: 6px;
+  color: ${({ theme }) => theme.colors.primaryColor};
+  text-shadow: ${({ theme }) => theme.colors.textShadowColor} 2px 0 1px;
+  border: 1px solid ${({ theme }) => theme.colors.accentColor};
   box-shadow: 0 2px 8px ${({ theme }) => theme.colors.boxShadow};
 
   &: hover {
