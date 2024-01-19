@@ -4,7 +4,7 @@ import { BoxUi } from 'ui/BoxUi.styled';
 export const Container = styled(BoxUi)`
   align-items: flex-start;
   text-align: center;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const TitleContacts = styled.h2`
