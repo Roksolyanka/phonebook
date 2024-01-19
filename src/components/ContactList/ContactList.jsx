@@ -7,7 +7,7 @@ import {
   ContactItem,
   ContactWrapper,
   ContactsList,
-  IconPencil,
+  Icon,
   ListPhone,
 } from './ContactListStyled.styled';
 import sprite from '../../assets/sprite.svg';
@@ -28,6 +28,11 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
     setShowModal(false);
   };
 
+ const callContact = contact => {
+   const phoneNumber = contact.number;
+   window.location.href = `tel:${phoneNumber}`;
+ };
+
   return (
     <ContactsList>
       {showContacts &&
@@ -40,13 +45,22 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
               </ContactWrapper>
               <ButtonWrapper>
                 <Button
+                  aria-label="Call the contact"
+                  type="button"
+                  onClick={() => callContact(contact)}
+                >
+                  <Icon>
+                    <use href={`${sprite}#icon-phone`}></use>
+                  </Icon>
+                </Button>
+                <Button
                   aria-label="Edit contact"
                   type="button"
                   onClick={() => onEditContact(contact)}
                 >
-                  <IconPencil>
+                  <Icon>
                     <use href={`${sprite}#icon-pencil`}></use>
-                  </IconPencil>
+                  </Icon>
                 </Button>
                 <Button
                   aria-label="Delete contact"

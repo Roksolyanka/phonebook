@@ -49,7 +49,7 @@ export const ButtonWrapper = styled.div`
   gap: 15px;
 `;
 
-export const IconPencil = styled.svg`
+export const Icon = styled.svg`
   width: 18px;
   height: 18px;
 `;
