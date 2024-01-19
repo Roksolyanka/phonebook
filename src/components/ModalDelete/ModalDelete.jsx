@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ButtonUi } from 'ui/ButtonUi.styled';
-import { ModalDeleteBackdrop, ModalDeleteBox, ModalDeleteTitle } from './ModalDelete.styled';
+import { ModalDeleteBackdrop, ModalDeleteBox, ModalDeleteButton, ModalDeleteButtonWrapper, ModalDeleteTitle } from './ModalDelete.styled';
 
 const ModalDelete = ({ contact, onDeleteContact, onNoDeleteContact }) => {
   const onConfirm = () => {
@@ -27,14 +26,14 @@ const ModalDelete = ({ contact, onDeleteContact, onNoDeleteContact }) => {
           <ModalDeleteTitle>
             Are you sure you want to delete the contact <br /> {contact.name}?
           </ModalDeleteTitle>
-          <div>
-            <ButtonUi type="button" onClick={onConfirm}>
+          <ModalDeleteButtonWrapper>
+            <ModalDeleteButton type="button" onClick={onConfirm}>
               Yes
-            </ButtonUi>
-            <ButtonUi type="button" onClick={onCancel}>
+            </ModalDeleteButton>
+            <ModalDeleteButton type="button" onClick={onCancel}>
               No
-            </ButtonUi>
-          </div>
+            </ModalDeleteButton>
+          </ModalDeleteButtonWrapper>
       </ModalDeleteBox>
     </ModalDeleteBackdrop>
   );
