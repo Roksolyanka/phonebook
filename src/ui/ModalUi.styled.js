@@ -20,11 +20,10 @@ export const ModalBackdropUi = styled(BoxUi)`
 
 export const ModalBoxUi = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundColor};
-  position: relative;
   box-shadow: 1px 1px 14px 4px ${({ theme }) => theme.colors.accentColor};
   border-radius: 16px;
-  width: 400px;
-  height: 400px;
+  max-width: 400px;
+  max-height: 80vh;
   padding: 20px 20px 20px 20px;
   animation-name: modalopen;
   animation-duration: 1.75s;
@@ -38,14 +37,6 @@ export const ModalBoxUi = styled.div`
       opacity: 1;
     }
   }
-`;
-
-export const ModalFirstWrapperUi = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
 `;
 
 export const ModalTitleUi = styled.h1`

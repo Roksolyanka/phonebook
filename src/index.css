@@ -2,9 +2,7 @@
 
 body {
   background-color: #8c8377;
-  /* height: 100%; */
   margin: 0;
-  /* padding: 0; */
   font-family: 'Roboto';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,4 +21,22 @@ code {
 
 main {
   flex-grow: 1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffe724;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #222326;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #120c07;
+  cursor: pointer;
 }

@@ -9,7 +9,6 @@ import { ButtonUi } from 'ui/ButtonUi.styled';
 import {
   ModalBackdropUi,
   ModalBoxUi,
-  ModalFirstWrapperUi,
   ModalFormUi,
   ModalInputUi,
   ModalSecondWrapperUi,
@@ -38,7 +37,6 @@ const RegisterPage = () => {
   return (
     <ModalBackdropUi>
       <ModalBoxUi>
-        <ModalFirstWrapperUi>
           <ModalTitleUi>Register Your Account</ModalTitleUi>
           <ModalFormUi onSubmit={handleSubmit}>
             <InputComponent
@@ -75,7 +73,6 @@ const RegisterPage = () => {
             />
             <ButtonUi type="submit">Sign up</ButtonUi>
           </ModalFormUi>
-        </ModalFirstWrapperUi>
       </ModalBoxUi>
     </ModalBackdropUi>
   );

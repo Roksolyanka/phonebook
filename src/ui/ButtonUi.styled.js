@@ -13,6 +13,7 @@ export const ButtonUi = styled.button`
   max-height: auto;
   width: 170px;
   margin: 20px;
+  cursor: pointer;
 
   &: hover {
     background-color: ${({ theme }) => theme.colors.textShadowColor};
