@@ -40,6 +40,7 @@ export const ModalBoxUi = styled.div`
 `;
 
 export const ModalTitleUi = styled.h1`
+  font-size: 25px;
   text-align: center;
   color: ${({ theme }) => theme.colors.textShadowColor};
 `;
