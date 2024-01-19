@@ -28,6 +28,11 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
     setShowModal(false);
   };
 
+  const callContact = contact => {
+    const phoneNumber = contact.number;
+    window.location.href = `tel:${phoneNumber}`;
+  };
+
   return (
     <ContactsList>
       {showContacts &&
@@ -39,16 +44,15 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
                 <ListPhone>{contact.number}</ListPhone>
               </ContactWrapper>
               <ButtonWrapper>
-                <a href={contact.number}>
-                  <Button
-                    aria-label="Call the contact"
-                    type="button"
-                  >
-                    <Icon>
-                      <use href={`${sprite}#icon-phone`}></use>
-                    </Icon>
-                  </Button>
-                </a>
+                <Button
+                  aria-label="Call the contact"
+                  type="button"
+                  onClick={() => callContact(contact)}
+                >
+                  <Icon>
+                    <use href={`${sprite}#icon-phone`}></use>
+                  </Icon>
+                </Button>
                 <Button
                   aria-label="Edit contact"
                   type="button"

@@ -18,7 +18,7 @@ export const ContactItem = styled.li`
   font-size: 20px;
   font-weight: bold;
   list-style: none;
-  width: 350px;
+  width: 400px;
   padding: 12px 20px;
   margin: 0 auto 5px;
   box-sizing: border-box;
@@ -53,9 +53,8 @@ export const Icon = styled.svg`
 `;
 
 export const Button = styled(ButtonUi)`
-  // font-size: 30px;
   border-radius: 5px;
   padding: 0;
-  width: 30px;
+  width: 35px;
   margin: 10px 0;
 `;
