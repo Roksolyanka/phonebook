@@ -9,7 +9,6 @@ import { ButtonUi } from 'ui/ButtonUi.styled';
 import {
   ModalBackdropUi,
   ModalBoxUi,
-  ModalFirstWrapperUi,
   ModalFormUi,
   ModalInputUi,
   ModalSecondWrapperUi,
@@ -37,33 +36,31 @@ const LoginPage = () => {
   return (
     <ModalBackdropUi>
       <ModalBoxUi>
-        <ModalFirstWrapperUi>
-          <ModalTitleUi>Login Into Your Account</ModalTitleUi>
-          <ModalFormUi onSubmit={handleSubmit}>
-            <InputComponent
-              label="Email:"
-              name="userEmail"
-              type="email"
-              required
-              minLength={2}
-              autoComplete="email"
-              wrapperStyle={ModalSecondWrapperUi}
-              inputStyle={ModalInputUi}
-            />
-            <br />
-            <InputComponent
-              label="Password:"
-              name="userPassword"
-              type="password"
-              required
-              minLength={7}
-              autoComplete="current-password"
-              wrapperStyle={ModalSecondWrapperUi}
-              inputStyle={ModalInputUi}
-            />
-            <ButtonUi type="submit">Sign in</ButtonUi>
-          </ModalFormUi>
-        </ModalFirstWrapperUi>
+        <ModalTitleUi>Login Into Your Account</ModalTitleUi>
+        <ModalFormUi onSubmit={handleSubmit}>
+          <InputComponent
+            label="Email:"
+            name="userEmail"
+            type="email"
+            required
+            minLength={2}
+            autoComplete="email"
+            wrapperStyle={ModalSecondWrapperUi}
+            inputStyle={ModalInputUi}
+          />
+          <br />
+          <InputComponent
+            label="Password:"
+            name="userPassword"
+            type="password"
+            required
+            minLength={7}
+            autoComplete="current-password"
+            wrapperStyle={ModalSecondWrapperUi}
+            inputStyle={ModalInputUi}
+          />
+          <ButtonUi type="submit">Sign in</ButtonUi>
+        </ModalFormUi>
       </ModalBoxUi>
     </ModalBackdropUi>
   );
