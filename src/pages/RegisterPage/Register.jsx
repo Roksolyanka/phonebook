@@ -37,42 +37,42 @@ const RegisterPage = () => {
   return (
     <ModalBackdropUi>
       <ModalBoxUi>
-          <ModalTitleUi>Register Your Account</ModalTitleUi>
-          <ModalFormUi onSubmit={handleSubmit}>
-            <InputComponent
-              label="Name:"
-              type="text"
-              name="userName"
-              required
-              minLength={2}
-              autoComplete="userName"
-              wrapperStyle={ModalSecondWrapperUi}
-              inputStyle={ModalInputUi}
-            />
-            <br />
-            <InputComponent
-              label="Email:"
-              name="userEmail"
-              type="email"
-              required
-              minLength={2}
-              autoComplete="email"
-              wrapperStyle={ModalSecondWrapperUi}
-              inputStyle={ModalInputUi}
-            />
-            <br />
-            <InputComponent
-              label="Password:"
-              name="userPassword"
-              type="password"
-              required
-              minLength={7}
-              autoComplete="current-password"
-              wrapperStyle={ModalSecondWrapperUi}
-              inputStyle={ModalInputUi}
-            />
-            <ButtonUi type="submit">Sign up</ButtonUi>
-          </ModalFormUi>
+        <ModalTitleUi>Register Your Account</ModalTitleUi>
+        <ModalFormUi onSubmit={handleSubmit}>
+          <InputComponent
+            label="Name:"
+            type="text"
+            name="userName"
+            required
+            minLength={2}
+            autoComplete="userName"
+            wrapperStyle={ModalSecondWrapperUi}
+            inputStyle={ModalInputUi}
+          />
+          <br />
+          <InputComponent
+            label="Email:"
+            name="userEmail"
+            type="email"
+            required
+            minLength={2}
+            autoComplete="email"
+            wrapperStyle={ModalSecondWrapperUi}
+            inputStyle={ModalInputUi}
+          />
+          <br />
+          <InputComponent
+            label="Password:"
+            name="userPassword"
+            type="password"
+            required
+            minLength={7}
+            autoComplete="current-password"
+            wrapperStyle={ModalSecondWrapperUi}
+            inputStyle={ModalInputUi}
+          />
+          <ButtonUi type="submit">Sign up</ButtonUi>
+        </ModalFormUi>
       </ModalBoxUi>
     </ModalBackdropUi>
   );
