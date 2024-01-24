@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ModalDeleteBackdrop, ModalDeleteBox, ModalDeleteButton, ModalDeleteButtonWrapper, ModalDeleteTitle } from './ModalDelete.styled';
+import {
+  ModalDeleteBackdrop,
+  ModalDeleteBox,
+  ModalDeleteButton,
+  ModalDeleteButtonWrapper,
+  ModalDeleteTitle,
+} from './ModalDelete.styled';
 
 const ModalDelete = ({ contact, onDeleteContact, onNoDeleteContact }) => {
   const onConfirm = () => {
@@ -23,17 +29,17 @@ const ModalDelete = ({ contact, onDeleteContact, onNoDeleteContact }) => {
       onClick={onBackdropClick}
     >
       <ModalDeleteBox>
-          <ModalDeleteTitle>
-            Are you sure you want to delete the contact <br /> {contact.name}?
-          </ModalDeleteTitle>
-          <ModalDeleteButtonWrapper>
-            <ModalDeleteButton type="button" onClick={onConfirm}>
-              Yes
-            </ModalDeleteButton>
-            <ModalDeleteButton type="button" onClick={onCancel}>
-              No
-            </ModalDeleteButton>
-          </ModalDeleteButtonWrapper>
+        <ModalDeleteTitle>
+          Are you sure you want to delete the contact <br /> {contact.name}?
+        </ModalDeleteTitle>
+        <ModalDeleteButtonWrapper>
+          <ModalDeleteButton type="button" onClick={onConfirm}>
+            Yes
+          </ModalDeleteButton>
+          <ModalDeleteButton type="button" onClick={onCancel}>
+            No
+          </ModalDeleteButton>
+        </ModalDeleteButtonWrapper>
       </ModalDeleteBox>
     </ModalDeleteBackdrop>
   );

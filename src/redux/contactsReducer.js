@@ -68,7 +68,7 @@ const contactsSlice = createSlice({
         state.error = action.payload;
       })
 
-      //   ---------------------------EDIT CONTACT--------------------------------
+      //---------------------------EDIT CONTACT--------------------------------
 
       .addCase(editContactThunk.pending, state => {
         state.isLoading = true;
