@@ -53,9 +53,7 @@ const authSlice = createSlice({
       .addCase(loginUserThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
-        Notiflix.Notify.failure(
-          'Login failed. Please check your credentials.'
-        );
+        Notiflix.Notify.failure('Login failed. Please check your credentials.');
       })
 
       // -----------------------------REFRESH-----------------------------------
