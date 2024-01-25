@@ -18,7 +18,7 @@ export const TitleContacts = styled.h2`
 `;
 
 export const ContactsContainer = styled.div`
-  width: 100%;
+  flex: 2;
 `;
 
 export const NoContacts = styled.p`
