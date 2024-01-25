@@ -67,7 +67,9 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
                   type="button"
                   onClick={() => openModal(contact)}
                 >
-                  &times;
+                  <Icon>
+                    <use href={`${sprite}#icon-delete`}></use>
+                  </Icon>
                 </Button>
               </ButtonWrapper>
             </ContactItem>
