@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const InputUi = styled.input`
-  height: 25px;
-  margin: 0 auto;
+  box-sizing: border-box;
+  height: 50px;
+  margin: 0;
   font-size: 20px;
   font-weight: bold;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
