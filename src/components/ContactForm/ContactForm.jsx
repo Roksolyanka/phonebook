@@ -7,8 +7,8 @@ import { selectUserContacts } from 'redux/selectors';
 
 import Notiflix from 'notiflix';
 
-import { ButtonUi } from 'ui/ButtonUi.styled';
 import {
+  ButtonForm,
   ContainerForm,
   Form,
   InputStyle,
@@ -103,13 +103,13 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
           inputStyle={InputStyle}
         />
         <WrapperForButton>
-          <ButtonUi type="submit">
+          <ButtonForm type="submit">
             {editingContact ? 'Edit contact' : 'Add contact'}
-          </ButtonUi>
+          </ButtonForm>
           {editingContact && (
-            <ButtonUi type="button" onClick={handleCancel}>
+            <ButtonForm type="button" onClick={handleCancel}>
               Cancel
-            </ButtonUi>
+            </ButtonForm>
           )}
         </WrapperForButton>
       </Form>
