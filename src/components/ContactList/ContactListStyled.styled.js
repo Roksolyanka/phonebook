@@ -3,11 +3,10 @@ import { BoxUi } from 'ui/BoxUi.styled';
 import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const ContactsList = styled.ul`
-  display: flex;
-  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  list-style: none;
 `;
 
 export const ContactItem = styled.li`
@@ -18,7 +17,8 @@ export const ContactItem = styled.li`
   font-size: 20px;
   font-weight: bold;
   list-style: none;
-  width: 400px;
+  width: 100%;
+  box-sizing: border-box;
   padding: 12px 20px;
   margin: 0 auto 5px;
   box-sizing: border-box;
@@ -27,7 +27,7 @@ export const ContactItem = styled.li`
   border: 1px solid ${({ theme }) => theme.colors.accentColor};
   box-shadow: 0 2px 8px ${({ theme }) => theme.colors.boxShadow};
 
-  &: hover {
+  &:hover {
     box-shadow: ${({ theme }) => theme.colors.accentColor} 0px 10px 10px 0px;
   }
 `;
@@ -37,7 +37,14 @@ export const ContactWrapper = styled(BoxUi)`
   align-items: start;
 `;
 
+export const ListName = styled.span`
+  overflow: hidden;
+  word-break: break-all;
+`;
+
 export const ListPhone = styled.span`
+  overflow: hidden;
+  word-break: break-all;
   color: ${({ theme }) => theme.colors.textShadowColor};
 `;
 

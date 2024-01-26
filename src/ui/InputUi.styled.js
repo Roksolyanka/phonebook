@@ -9,7 +9,8 @@ export const InputUi = styled.input`
   background-color: ${({ theme }) => theme.colors.secondaryColor};
   padding: 8px 15px;
 
-  &: hover {
+  &:hover,
+  &:focus {
     box-shadow: ${({ theme }) => theme.colors.accentColor} 0px 5px 10px,
       ${({ theme }) => theme.colors.accentColor} 0px 2px 5px;
   }
