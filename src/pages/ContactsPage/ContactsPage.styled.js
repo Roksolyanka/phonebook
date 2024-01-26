@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import { BoxUi } from 'ui/BoxUI.styled';
 
-export const Container = styled(BoxUi)`
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   align-items: flex-start;
   text-align: center;
   gap: 10px;
