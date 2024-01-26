@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Notify } from 'notiflix';
 
 import { addContactsThunk, editContactThunk } from 'redux/contactsOperations';
 import { selectUserContacts } from 'redux/selectors';
 
-import Notiflix from 'notiflix';
+import { InputComponent } from 'components/Input/Input';
+
+import { validateContactName, validateContactNumber } from 'helpers/helper';
 
 import {
   ButtonForm,
@@ -15,7 +18,6 @@ import {
   WrapperForButton,
   WrapperStyle,
 } from './FormAddContact.styled';
-import { InputComponent } from 'components/Input/Input';
 
 export const ContactForm = ({ editingContact, setEditingContact }) => {
   const contacts = useSelector(selectUserContacts);
@@ -49,20 +51,11 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
       .join(' ');
 
     if (
-      contacts.some(
-        contact => contact.name === name && editingContact !== contact
-      )
-    )
-      return Notiflix.Notify.info(`Contact with name ${name} already exists!`);
-
-    if (
-      contacts.some(
-        contact => contact.number === number && editingContact !== contact
-      )
-    )
-      return Notiflix.Notify.info(
-        `Contact with number ${number} already exists!`
-      );
+      !validateContactName(contacts, name, editingContact) ||
+      !validateContactNumber(contacts, number, editingContact)
+    ) {
+      return;
+    }
 
     if (editingContact) {
       dispatch(editContactThunk({ id: editingContact.id, name, number }));
@@ -70,7 +63,7 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
       dispatch(addContactsThunk({ name, number }));
     }
 
-    Notiflix.Notify.success(
+    Notify.success(
       `Contact ${name} successfully ${editingContact ? 'edited' : 'added'}.`
     );
 
@@ -124,7 +117,6 @@ ContactForm.propTypes = {
   setEditingContact: PropTypes.func,
   contacts: PropTypes.array,
 };
-
 
 // import React, { useEffect } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
