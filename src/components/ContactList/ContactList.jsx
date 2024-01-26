@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix';
+
+import ModalDelete from 'components/ModalDelete/ModalDelete';
+
+import sprite from '../../assets/sprite.svg';
 import {
   Button,
   ButtonWrapper,
@@ -11,8 +15,6 @@ import {
   ListName,
   ListPhone,
 } from './ContactListStyled.styled';
-import sprite from '../../assets/sprite.svg';
-import ModalDelete from 'components/ModalDelete/ModalDelete';
 
 export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
   const [showModal, setShowModal] = useState(false);
@@ -81,7 +83,7 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
           contact={selectedContact}
           onDeleteContact={contactId => {
             onDeleteContact(contactId);
-            Notiflix.Notify.success(
+            Notify.success(
               `Contact ${selectedContact.name} successfully deleted.`
             );
             closeModal();

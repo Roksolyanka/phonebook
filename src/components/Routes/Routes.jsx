@@ -1,5 +1,6 @@
-import { lazy } from 'react';
+import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 
 const HomePage = lazy(() => import('../../pages/HomePage/Home'));

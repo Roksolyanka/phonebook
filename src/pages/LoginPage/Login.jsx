@@ -1,9 +1,14 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { useFormik } from 'formik';
 
 import { loginUserThunk } from 'redux/operations';
 import { selectAuthentificated } from 'redux/selectors';
+
+import { loginSchema } from 'schemas';
+
+import { InputComponent } from 'components/Input/Input';
 
 import { ButtonUi } from 'ui/ButtonUi.styled';
 import {
@@ -14,9 +19,6 @@ import {
   ModalSecondWrapperUi,
   ModalTitleUi,
 } from 'ui/ModalUi.styled';
-import { InputComponent } from 'components/Input/Input';
-import { useFormik } from 'formik';
-import { loginSchema } from 'schemas';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
