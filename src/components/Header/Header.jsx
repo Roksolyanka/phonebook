@@ -1,4 +1,13 @@
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { logoutUserThunk, refreshUserThunk } from 'redux/operations';
+import {
+  selectAuthentificated,
+  selectToken,
+  selectUserName,
+} from 'redux/selectors';
+
 import {
   ButtonLogOut,
   HeaderStyle,
@@ -7,13 +16,6 @@ import {
   StyledNavLink,
   Welcome,
 } from './Header.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  selectAuthentificated,
-  selectToken,
-  selectUserName,
-} from 'redux/selectors';
-import { useEffect } from 'react';
 
 export const Header = () => {
   const dispatch = useDispatch();

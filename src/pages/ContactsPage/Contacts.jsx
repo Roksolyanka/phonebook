@@ -12,6 +12,7 @@ import {
   deleteContactsThunk,
   requestContactsThunk,
 } from 'redux/contactsOperations';
+import { setFilter } from 'redux/contactsReducer';
 
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
@@ -25,7 +26,6 @@ import {
   NoContacts,
   TitleContacts,
 } from './ContactsPage.styled';
-import { setFilter } from 'redux/contactsReducer';
 
 const ContactsPage = () => {
   const authentificated = useSelector(selectAuthentificated);
