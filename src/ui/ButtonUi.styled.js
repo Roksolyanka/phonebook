@@ -21,4 +21,15 @@ export const ButtonUi = styled.button`
     box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.accentColor};
     fill: ${({ theme }) => theme.colors.accentColor};
   }
+
+  &:disabled {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+    border: 1px solid #999;
+  }
+
+  &:disabled:hover {
+    box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.textShadowColor};
+  }
 `;
