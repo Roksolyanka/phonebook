@@ -8,13 +8,12 @@ export const FilterStyled = styled.label`
   color: ${({ theme }) => theme.colors.primaryColor};
   text-align: center;
   text-shadow: ${({ theme }) => theme.colors.textShadowColor} 2px 0 0;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin: 10px 0 30px 0;
 `;
 
 export const InputFind = styled(InputUi)`
   width: 320px;
-  margin-left: 10px;
+  margin: 0 0 0 10px;
   vertical-align: top;
 
   &: hover, focus {

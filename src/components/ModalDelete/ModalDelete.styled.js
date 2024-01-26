@@ -16,7 +16,9 @@ export const ModalDeleteBox = styled(ModalBoxUi)`
 `;
 
 export const ModalDeleteTitle = styled(ModalTitleUi)`
-  overflow: auto;
+  overflow: hidden;
+  word-break: break-all;
+  margin: 0;
 `;
 
 export const ModalDeleteButtonWrapper = styled.div`
