@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BoxUi } from 'ui/BoxUi.styled';
+import { BoxUi } from 'ui/BoxUI.styled';
 import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const ContactsList = styled.ul`
