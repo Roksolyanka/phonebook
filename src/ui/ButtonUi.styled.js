@@ -14,6 +14,7 @@ export const ButtonUi = styled.button`
   width: 170px;
   margin: 20px;
   cursor: pointer;
+  outline: none; /* Видаляє обведення при фокусі */
 
   &:hover,
   &:focus {

@@ -25,7 +25,7 @@ export const ModalBoxUi = styled.div`
   max-width: 400px;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   animation-name: modalopen;
   animation-duration: 1.75s;
 
@@ -54,7 +54,7 @@ export const ModalSecondWrapperUi = styled.div`
   display: grid;
   color: ${({ theme }) => theme.colors.textShadowColor};
   font-size: 20px;
-  margin-bottom: 5px;
+  margin: 0 0 5px 0;
 `;
 
 export const ModalInputUi = styled(InputUi)`

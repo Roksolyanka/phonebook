@@ -13,8 +13,7 @@ export const TitleContacts = styled.h2`
   color: ${({ theme }) => theme.colors.secondaryColor};
   text-align: center;
   text-shadow: ${({ theme }) => theme.colors.textShadowColor} 10px 0 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 `;
 
 export const ContactsContainer = styled.div`
@@ -27,5 +26,5 @@ export const NoContacts = styled.p`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.textShadowColor};
   text-align: center;
-  margin-top: 100px;
+  margin: 100px 0 0 0;
 `;
