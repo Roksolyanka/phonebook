@@ -48,7 +48,6 @@ const ContactsPage = () => {
   };
 
   const handleEditContact = contact => {
-    console.log('Editing Contact (contacts.jsx):', contact);
     setEditingContact(contact);
   };
 
