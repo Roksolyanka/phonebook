@@ -7,6 +7,7 @@ import {
   ModalDeleteButtonWrapper,
   ModalDeleteTitle,
 } from './ModalDelete.styled';
+import { ModalTitleUi } from 'ui/ModalUi.styled';
 
 const ModalDelete = ({ contact, onDeleteContact, onNoDeleteContact }) => {
   const onConfirm = () => {
@@ -29,9 +30,10 @@ const ModalDelete = ({ contact, onDeleteContact, onNoDeleteContact }) => {
       onClick={onBackdropClick}
     >
       <ModalDeleteBox>
-        <ModalDeleteTitle>
-          Are you sure you want to delete the contact <br /> {contact.name}?
-        </ModalDeleteTitle>
+        <ModalTitleUi>
+          Are you sure you want to delete the contact
+          <ModalDeleteTitle>{contact.name}?</ModalDeleteTitle>
+        </ModalTitleUi>
         <ModalDeleteButtonWrapper>
           <ModalDeleteButton type="button" onClick={onConfirm}>
             Yes

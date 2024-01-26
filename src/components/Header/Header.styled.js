@@ -32,7 +32,7 @@ export const StyledNavLink = styled(NavLink)`
   padding: 15px;
   max-height: auto;
   max-width: 200px;
-  margin-right: 20px;
+  margin: 0 20px 0 0;
 
   &: hover {
     background-color: ${({ theme }) => theme.colors.textShadowColor};

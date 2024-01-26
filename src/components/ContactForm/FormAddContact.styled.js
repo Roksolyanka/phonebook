@@ -4,8 +4,8 @@ import { InputUi } from 'ui/InputUi.styled';
 
 export const ContainerForm = styled.div`
   flex: 1;
-  margin-top: 100px;
-  padding-left: 30px;
+  margin: 100px 0 0 0;
+  padding: 0 0 0 30px;
   height: 100vh;
 `;
 
@@ -35,7 +35,7 @@ export const InputStyle = styled(InputUi)`
 export const WrapperForButton = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-top: 10px;
+  margin: 10px 0 0 0;
 `;
 
 export const ButtonForm = styled(ButtonUi)`

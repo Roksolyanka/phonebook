@@ -7,18 +7,16 @@ import { Header } from 'components/Header/Header';
 import { Footer } from 'components/Footer/Footer';
 import { RoutesList } from 'components/Routes/Routes';
 
-export const App = () => {
-  return (
-    <div id="app-container">
-      <ThemeProvider theme={theme}>
-        <Header />
-        <main>
-          <Suspense fallback={<Loader />}>
-            <RoutesList />
-          </Suspense>
-        </main>
-        <Footer />
-      </ThemeProvider>
-    </div>
-  );
-};
+export const App = () => (
+  <div id="app-container">
+    <ThemeProvider theme={theme}>
+      <Header />
+      <main>
+        <Suspense fallback={<Loader />}>
+          <RoutesList />
+        </Suspense>
+      </main>
+      <Footer />
+    </ThemeProvider>
+  </div>
+);
