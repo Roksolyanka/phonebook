@@ -15,20 +15,35 @@ import {
   ModalTitleUi,
 } from 'ui/ModalUi.styled';
 import { InputComponent } from 'components/Input/Input';
+import { useFormik } from 'formik';
+import { loginSchema } from 'schemas';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
   const authentificated = useSelector(selectAuthentificated);
 
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: loginSchema,
+  });
+
   const handleSubmit = event => {
     event.preventDefault();
 
-    const form = event.currentTarget;
-
-    const email = form.elements.userEmail.value.trim();
-    const password = form.elements.userPassword.value.trim();
+    const email = formik.values.email.trim();
+    const password = formik.values.password.trim();
 
     dispatch(loginUserThunk({ email, password }));
+  };
+
+  const isFormValid = () => {
+    return (
+      Object.keys(formik.errors).length === 0 &&
+      Object.keys(formik.touched).length > 0
+    );
   };
 
   if (authentificated) return <Navigate to="/contacts" />;
@@ -40,26 +55,47 @@ const LoginPage = () => {
         <ModalFormUi onSubmit={handleSubmit}>
           <InputComponent
             label="Email:"
-            name="userEmail"
+            name="email"
             type="email"
-            required
-            minLength={2}
+            placeholder="Enter email"
             autoComplete="email"
+            required
             wrapperStyle={ModalSecondWrapperUi}
             inputStyle={ModalInputUi}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+            formik={formik}
+            className={
+              formik.errors.email && formik.touched.email ? 'input-error' : ''
+            }
           />
           <br />
           <InputComponent
             label="Password:"
-            name="userPassword"
+            name="password"
             type="password"
-            required
-            minLength={7}
+            placeholder="Enter password"
             autoComplete="current-password"
+            required
             wrapperStyle={ModalSecondWrapperUi}
             inputStyle={ModalInputUi}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+            formik={formik}
+            className={
+              formik.errors.password && formik.touched.password
+                ? 'input-error'
+                : ''
+            }
           />
-          <ButtonUi type="submit">Sign in</ButtonUi>
+          <ButtonUi
+            disabled={!isFormValid() || formik.isSubmitting}
+            type="submit"
+          >
+            Sign in
+          </ButtonUi>
         </ModalFormUi>
       </ModalBoxUi>
     </ModalBackdropUi>
