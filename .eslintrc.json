@@ -18,7 +18,7 @@
     "react/jsx-uses-vars": "warn",
     "react/jsx-uses-react": "error",
     "react/react-in-jsx-scope": "off",
-    "max-len": ["error", { "code": 120 }],
+    "max-len": ["error", { "code": 140 }],
     "object-curly-spacing": [2, "always"],
     "arrow-parens": ["error", "as-needed"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
