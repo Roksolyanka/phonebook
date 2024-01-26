@@ -15,7 +15,8 @@ export const ButtonUi = styled.button`
   margin: 20px;
   cursor: pointer;
 
-  &: hover {
+  &:hover,
+  &:focus {
     background-color: ${({ theme }) => theme.colors.textShadowColor};
     color: ${({ theme }) => theme.colors.accentColor};
     box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.accentColor};
@@ -29,7 +30,8 @@ export const ButtonUi = styled.button`
     border: 1px solid #999;
   }
 
-  &:disabled:hover {
+  &:disabled:hover,
+  &:disabled:focus {
     box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.textShadowColor};
   }
 `;
