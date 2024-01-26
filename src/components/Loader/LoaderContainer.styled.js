@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import { BoxUi } from 'ui/BoxUI.styled';
 
-export const LoaderContainer = styled(BoxUi)`
+export const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100vw;
 

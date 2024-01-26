@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { InputUi } from './InputUi.styled';
-import { BoxUi } from './BoxUI.styled';
 
-export const ModalBackdropUi = styled(BoxUi)`
+export const ModalBackdropUi = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 80px;
   left: 0;

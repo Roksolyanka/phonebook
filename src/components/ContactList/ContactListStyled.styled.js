@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { BoxUi } from 'ui/BoxUI.styled';
 import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const ContactsList = styled.ul`
@@ -32,7 +31,10 @@ export const ContactItem = styled.li`
   }
 `;
 
-export const ContactWrapper = styled(BoxUi)`
+export const ContactWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   align-items: start;
 `;
