@@ -32,27 +32,35 @@ export const Header = () => {
     dispatch(logoutUserThunk());
   };
 
+  const LeftContent = () => {
+    if (authentificated)
+      return <StyledNavLink to="/contacts">Contacts</StyledNavLink>;
+    return <StyledNavLink to="/">Home</StyledNavLink>;
+  };
+
+  const RightContent = () => {
+    if (authentificated)
+      return (
+        <>
+          <Welcome>Hello, {userName}!</Welcome>
+          <ButtonLogOut onClick={handleLogOut}>Log out</ButtonLogOut>
+        </>
+      );
+    return (
+      <>
+        <StyledNavLink to="/login">Login</StyledNavLink>
+        <StyledNavLink to="/register">Register</StyledNavLink>
+      </>
+    );
+  };
+
   return (
     <HeaderStyle>
       <NavLeft>
-        {authentificated ? (
-          <StyledNavLink to="/contacts">Contacts</StyledNavLink>
-        ) : (
-          <StyledNavLink to="/">Home</StyledNavLink>
-        )}
+        <LeftContent />
       </NavLeft>
       <NavRight>
-        {authentificated ? (
-          <>
-            <Welcome>Hello, {userName}!</Welcome>
-            <ButtonLogOut onClick={handleLogOut}>Log out</ButtonLogOut>
-          </>
-        ) : (
-          <>
-            <StyledNavLink to="/login">Login</StyledNavLink>
-            <StyledNavLink to="/register">Register</StyledNavLink>
-          </>
-        )}
+        <RightContent />
       </NavRight>
     </HeaderStyle>
   );
