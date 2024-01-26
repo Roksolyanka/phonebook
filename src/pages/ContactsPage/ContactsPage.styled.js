@@ -19,6 +19,7 @@ export const TitleContacts = styled.h2`
 
 export const ContactsContainer = styled.div`
   flex: 2;
+  padding: 0 10px;
 `;
 
 export const NoContacts = styled.p`
