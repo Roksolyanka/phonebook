@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { InputUi } from './InputUi.styled';
-import { BoxUi } from './BoxUi.styled';
+import { BoxUi } from './BoxUI.styled';
 
 export const ModalBackdropUi = styled(BoxUi)`
   position: fixed;
