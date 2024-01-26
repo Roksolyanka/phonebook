@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BoxUi } from 'ui/BoxUi.styled';
+import { BoxUi } from 'ui/BoxUI.styled';
 
 export const Container = styled(BoxUi)`
   align-items: flex-start;
