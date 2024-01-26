@@ -8,6 +8,7 @@ import {
   ContactWrapper,
   ContactsList,
   Icon,
+  ListName,
   ListPhone,
 } from './ContactListStyled.styled';
 import sprite from '../../assets/sprite.svg';
@@ -40,7 +41,7 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
           return (
             <ContactItem key={contact.id}>
               <ContactWrapper>
-                <span>{contact.name}:</span>
+                <ListName>{contact.name}:</ListName>
                 <ListPhone>{contact.number}</ListPhone>
               </ContactWrapper>
               <ButtonWrapper>
