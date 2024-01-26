@@ -1,5 +1,7 @@
 import React from 'react';
+
 import phonebookImage from '../../assets/images/phonebook.png';
+
 import { HomePageSection } from './HomePage.styled';
 import { TitlePhonebook } from 'components/App/App.styled';
 

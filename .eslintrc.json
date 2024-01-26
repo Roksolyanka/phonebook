@@ -14,7 +14,6 @@
   },
   "plugins": ["react", "react-hooks"],
   "rules": {
-    "quotes": ["error", "single"],
     "react/jsx-uses-vars": "warn",
     "react/jsx-uses-react": "error",
     "react/react-in-jsx-scope": "off",

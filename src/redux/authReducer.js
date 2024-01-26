@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { Notify } from 'notiflix';
+
 import {
   loginUserThunk,
   logoutUserThunk,
   refreshUserThunk,
   registerUserThunk,
 } from './operations';
-
-import Notiflix from 'notiflix';
 
 const initialState = {
   isLoading: false,
@@ -53,7 +53,7 @@ const authSlice = createSlice({
       .addCase(loginUserThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
-        Notiflix.Notify.failure('Login failed. Please check your credentials.');
+        Notify.failure('Login failed. Please check your credentials.');
       })
 
       // -----------------------------REFRESH-----------------------------------
