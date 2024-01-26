@@ -8,6 +8,9 @@ export const InputUi = styled.input`
   font-weight: bold;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
   padding: 8px 15px;
+  outline: none; /* Видаляє обведення при фокусі */
+  border-radius: 5px;
+  cursor: pointer;
 
   &:hover,
   &:focus {
