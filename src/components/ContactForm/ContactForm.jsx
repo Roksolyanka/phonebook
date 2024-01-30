@@ -17,7 +17,6 @@ import {
   WrapperForButton,
   WrapperStyle,
 } from './FormAddContact.styled';
-import { ModalInputUi } from 'ui/ModalUi.styled';
 
 export const ContactForm = ({ editingContact, setEditingContact }) => {
   const contacts = useSelector(selectUserContacts);
@@ -84,7 +83,6 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
           onChange={e => setContactName(e.target.value)}
           required
           wrapperStyle={WrapperStyle}
-          inputStyle={ModalInputUi}
         />
         <InputComponent
           label="Number:"
@@ -95,7 +93,6 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
           onChange={e => setContactNumber(e.target.value)}
           required
           wrapperStyle={WrapperStyle}
-          inputStyle={ModalInputUi}
         />
         <WrapperForButton>
           <ButtonForm type="submit">
