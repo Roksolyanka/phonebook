@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Notify } from 'notiflix';
 
-import { addContactsThunk, editContactThunk } from 'redux/contactsOperations';
+import { addContactsThunk, editContactThunk } from 'redux/contacts/operations';
 import { selectUserContacts } from 'redux/selectors';
 
 import { InputComponent } from 'components/Input/Input';
@@ -14,7 +14,6 @@ import {
   ButtonForm,
   ContainerForm,
   Form,
-  InputStyle,
   WrapperForButton,
   WrapperStyle,
 } from './FormAddContact.styled';
@@ -84,7 +83,6 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
           onChange={e => setContactName(e.target.value)}
           required
           wrapperStyle={WrapperStyle}
-          inputStyle={InputStyle}
         />
         <InputComponent
           label="Number:"
@@ -95,7 +93,6 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
           onChange={e => setContactNumber(e.target.value)}
           required
           wrapperStyle={WrapperStyle}
-          inputStyle={InputStyle}
         />
         <WrapperForButton>
           <ButtonForm type="submit">

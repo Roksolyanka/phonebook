@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 
-import { loginUserThunk } from 'redux/operations';
+import { loginUserThunk } from 'redux/auth/operations';
 import { selectAuthentificated } from 'redux/selectors';
 
 import { loginSchema } from 'schemas';
@@ -15,7 +15,6 @@ import {
   ModalBackdropUi,
   ModalBoxUi,
   ModalFormUi,
-  ModalInputUi,
   ModalSecondWrapperUi,
   ModalTitleUi,
 } from 'ui/ModalUi.styled';
@@ -63,7 +62,6 @@ const LoginPage = () => {
             autoComplete="email"
             required
             wrapperStyle={ModalSecondWrapperUi}
-            inputStyle={ModalInputUi}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
@@ -81,7 +79,6 @@ const LoginPage = () => {
             autoComplete="current-password"
             required
             wrapperStyle={ModalSecondWrapperUi}
-            inputStyle={ModalInputUi}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}

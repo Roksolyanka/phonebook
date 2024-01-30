@@ -11,8 +11,8 @@ import {
 import {
   deleteContactsThunk,
   requestContactsThunk,
-} from 'redux/contactsOperations';
-import { setFilter } from 'redux/contactsReducer';
+} from 'redux/contacts/operations';
+import { setFilter } from 'redux/contacts/reducer';
 
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
