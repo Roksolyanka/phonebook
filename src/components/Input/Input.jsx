@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ErrorInputMessageUi } from 'ui/ErrorInputMessageUi.styled';
+import { Input } from './Input.styled';
 
 export const InputComponent = props => {
-  const { label, name, wrapperStyle, inputStyle, formik } = props;
+  const { label, name, wrapperStyle, formik } = props;
   const Wrapper = wrapperStyle;
-  const Input = inputStyle;
   const htmlFor = `input-${name}`;
   return (
     <Wrapper>
@@ -23,7 +23,6 @@ InputComponent.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   wrapperStyle: PropTypes.object,
-  inputStyle: PropTypes.object,
   formik: PropTypes.shape({
     values: PropTypes.object,
     errors: PropTypes.object,
