@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { InputUi } from './InputUi.styled';
 
 export const ModalBackdropUi = styled.div`
   display: flex;
@@ -57,8 +56,4 @@ export const ModalSecondWrapperUi = styled.div`
   color: ${({ theme }) => theme.colors.textShadowColor};
   font-size: 20px;
   margin: 0 0 5px 0;
-`;
-
-export const ModalInputUi = styled(InputUi)`
-  width: 100%;
 `;

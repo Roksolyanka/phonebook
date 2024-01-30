@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { ButtonUi } from 'ui/ButtonUi.styled';
-import { InputUi } from 'ui/InputUi.styled';
 
 export const ContainerForm = styled.div`
   flex: 1;
@@ -26,10 +25,6 @@ export const Form = styled.form`
 export const WrapperStyle = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const InputStyle = styled(InputUi)`
-  width: 100%;
 `;
 
 export const WrapperForButton = styled.div`
