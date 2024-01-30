@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { logoutUserThunk, refreshUserThunk } from 'redux/operations';
+import { logoutUserThunk, refreshUserThunk } from 'redux/auth/operations';
 import {
   selectAuthentificated,
   selectToken,

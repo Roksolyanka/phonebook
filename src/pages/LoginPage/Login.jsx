@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 
-import { loginUserThunk } from 'redux/operations';
+import { loginUserThunk } from 'redux/auth/operations';
 import { selectAuthentificated } from 'redux/selectors';
 
 import { loginSchema } from 'schemas';
