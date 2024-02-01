@@ -15,7 +15,7 @@ import {
   NavRight,
   StyledNavLink,
   Welcome,
-} from './Header.styled';
+} from './styled';
 
 export const Header = () => {
   const dispatch = useDispatch();

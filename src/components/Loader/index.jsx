@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThreeDots } from 'react-loader-spinner';
 
-import { LoaderContainer } from './LoaderContainer.styled';
+import { LoaderContainer } from './styled';
 
 export const Loader = () => {
   return (
