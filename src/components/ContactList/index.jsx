@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Notify } from 'notiflix';
 
-import ModalDelete from 'components/ModalDelete/ModalDelete';
+import ModalDelete from 'components/ModalDelete';
 
 import sprite from '../../assets/sprite.svg';
 import {
@@ -14,7 +14,7 @@ import {
   Icon,
   ListName,
   ListPhone,
-} from './ContactListStyled.styled';
+} from './styled';
 
 export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
   const [showModal, setShowModal] = useState(false);
