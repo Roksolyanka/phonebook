@@ -1,6 +1,6 @@
 import { getCurrentYear } from 'helpers/helper';
 
-import { Creator, FooterStyle } from './Footer.styled';
+import { Creator, FooterStyle } from './styled';
 
 export const Footer = () => {
   const currentYear = getCurrentYear();

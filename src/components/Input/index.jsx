@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ErrorInputMessageUi } from 'ui/ErrorInputMessageUi.styled';
-import { Input } from './Input.styled';
+import { Input } from './styled';
 
 export const InputComponent = props => {
   const { label, name, wrapperStyle, formik } = props;

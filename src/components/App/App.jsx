@@ -2,10 +2,10 @@ import { Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'theme';
 
-import { Loader } from 'components/Loader/Loader';
-import { Header } from 'components/Header/Header';
-import { Footer } from 'components/Footer/Footer';
-import { RoutesList } from 'components/Routes/Routes';
+import { Loader } from 'components/Loader';
+import { Header } from 'components/Header';
+import { Footer } from 'components/Footer';
+import { RoutesList } from 'components/Routes';
 
 export const App = () => (
   <div id="app-container">

@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 
-import { loginUserThunk } from 'redux/auth/operations';
+import { registerUserThunk } from 'redux/auth/operations';
 import { selectAuthentificated } from 'redux/selectors';
 
-import { loginSchema } from 'schemas';
+import { registerSchema } from 'schemas';
 
-import { InputComponent } from 'components/Input/Input';
+import { InputComponent } from 'components/Input';
 
 import { ButtonUi } from 'ui/ButtonUi.styled';
 import {
@@ -19,25 +19,27 @@ import {
   ModalTitleUi,
 } from 'ui/ModalUi.styled';
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const dispatch = useDispatch();
   const authentificated = useSelector(selectAuthentificated);
 
   const formik = useFormik({
     initialValues: {
+      name: '',
       email: '',
       password: '',
     },
-    validationSchema: loginSchema,
+    validationSchema: registerSchema,
   });
 
   const handleSubmit = event => {
     event.preventDefault();
 
+    const name = formik.values.name.trim();
     const email = formik.values.email.trim();
     const password = formik.values.password.trim();
 
-    dispatch(loginUserThunk({ email, password }));
+    dispatch(registerUserThunk({ name, email, password }));
   };
 
   const isFormValid = () => {
@@ -46,14 +48,30 @@ const LoginPage = () => {
       Object.keys(formik.touched).length > 0
     );
   };
-
   if (authentificated) return <Navigate to="/contacts" />;
 
   return (
     <ModalBackdropUi>
       <ModalBoxUi>
-        <ModalTitleUi>Login Into Your Account</ModalTitleUi>
+        <ModalTitleUi>Register Your Account</ModalTitleUi>
         <ModalFormUi onSubmit={handleSubmit}>
+          <InputComponent
+            label="Name:"
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            autoComplete="name"
+            required
+            wrapperStyle={ModalSecondWrapperUi}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.name}
+            formik={formik}
+            className={
+              formik.errors.name && formik.touched.name ? 'input-error' : ''
+            }
+          />
+          <br />
           <InputComponent
             label="Email:"
             name="email"
@@ -93,7 +111,7 @@ const LoginPage = () => {
             disabled={!isFormValid() || formik.isSubmitting}
             type="submit"
           >
-            Sign in
+            Sign up
           </ButtonUi>
         </ModalFormUi>
       </ModalBoxUi>
@@ -101,4 +119,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
