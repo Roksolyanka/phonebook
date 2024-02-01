@@ -6,7 +6,7 @@ import { Notify } from 'notiflix';
 import { addContactsThunk, editContactThunk } from 'redux/contacts/operations';
 import { selectUserContacts } from 'redux/selectors';
 
-import { InputComponent } from 'components/Input/Input';
+import { InputComponent } from 'components/Input';
 
 import { validateContactName, validateContactNumber } from 'helpers/helper';
 
@@ -16,7 +16,7 @@ import {
   Form,
   WrapperForButton,
   WrapperStyle,
-} from './FormAddContact.styled';
+} from './styled';
 
 export const ContactForm = ({ editingContact, setEditingContact }) => {
   const contacts = useSelector(selectUserContacts);

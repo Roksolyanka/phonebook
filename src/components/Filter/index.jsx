@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { FilterStyled, InputFind } from './FilterStyled.styled';
+import { FilterStyled, InputFind } from './styled';
 
 export const Filter = ({ value, onChange }) => (
   <FilterStyled>

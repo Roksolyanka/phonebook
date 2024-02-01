@@ -7,7 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from 'redux/store';
 
 import { App } from 'components/App/App';
-import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader';
 
 import './index.css';
 

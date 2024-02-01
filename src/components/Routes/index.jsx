@@ -1,12 +1,12 @@
 import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
+import PrivateRoute from 'components/PrivateRoute';
 
-const HomePage = lazy(() => import('../../pages/HomePage/Home'));
-const ContactsPage = lazy(() => import('../../pages/ContactsPage/Contacts'));
-const RegisterPage = lazy(() => import('../../pages/RegisterPage/Register'));
-const LoginPage = lazy(() => import('../../pages/LoginPage/Login'));
+const HomePage = lazy(() => import('../../pages/HomePage'));
+const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
+const RegisterPage = lazy(() => import('../../pages/RegisterPage'));
+const LoginPage = lazy(() => import('../../pages/LoginPage'));
 
 const routes = [
   { path: '/', element: <HomePage /> },
