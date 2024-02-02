@@ -74,3 +74,17 @@ export const Wrapper = styled.div`
   position: relative;
   margin: 0 0 15px 0;
 `;
+
+export const Visibility = styled.span`
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  svg {
+    width: 25px;
+    height: 25px;
+    fill: ${({ theme }) => theme.colors.primaryColor};
+  }
+`;
