@@ -2,16 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ErrorInputMessageUi } from 'ui/ErrorInputMessageUi.styled';
-import { Input } from './styled';
+import { Input, PlaceholderText, Text, Wrapper } from './styled';
 
 export const InputComponent = props => {
-  const { label, name, wrapperStyle, formik } = props;
-  const Wrapper = wrapperStyle;
+  const { label, name, formik } = props;
   const htmlFor = `input-${name}`;
   return (
     <Wrapper>
-      <label htmlFor={htmlFor}>{label}</label>
       <Input id={htmlFor} name={name} {...props} />
+      <PlaceholderText htmlFor={htmlFor}>
+        <Text>{label}</Text>
+      </PlaceholderText>
       {formik && formik.touched[name] && formik.errors[name] && (
         <ErrorInputMessageUi>{formik.errors[name]}</ErrorInputMessageUi>
       )}
@@ -22,7 +23,6 @@ export const InputComponent = props => {
 InputComponent.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  wrapperStyle: PropTypes.object,
   formik: PropTypes.shape({
     values: PropTypes.object,
     errors: PropTypes.object,

@@ -50,10 +50,3 @@ export const ModalTitleUi = styled.h1`
 export const ModalFormUi = styled.form`
   text-align: center;
 `;
-
-export const ModalSecondWrapperUi = styled.div`
-  display: grid;
-  color: ${({ theme }) => theme.colors.textShadowColor};
-  font-size: 20px;
-  margin: 0 0 5px 0;
-`;
