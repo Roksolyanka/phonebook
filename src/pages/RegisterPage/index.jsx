@@ -87,7 +87,6 @@ const RegisterPage = () => {
           <InputComponent
             label="Password:"
             name="password"
-            type="password"
             autoComplete="current-password"
             required
             onChange={formik.handleChange}
