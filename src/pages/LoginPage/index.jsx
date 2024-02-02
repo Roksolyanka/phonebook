@@ -15,7 +15,6 @@ import {
   ModalBackdropUi,
   ModalBoxUi,
   ModalFormUi,
-  ModalSecondWrapperUi,
   ModalTitleUi,
 } from 'ui/ModalUi.styled';
 
@@ -58,10 +57,8 @@ const LoginPage = () => {
             label="Email:"
             name="email"
             type="email"
-            placeholder="Enter email"
             autoComplete="email"
             required
-            wrapperStyle={ModalSecondWrapperUi}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
@@ -75,10 +72,8 @@ const LoginPage = () => {
             label="Password:"
             name="password"
             type="password"
-            placeholder="Enter password"
             autoComplete="current-password"
             required
-            wrapperStyle={ModalSecondWrapperUi}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}

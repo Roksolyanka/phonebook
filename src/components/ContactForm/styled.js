@@ -3,28 +3,22 @@ import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const ContainerForm = styled.div`
   flex: 1;
+  height: 100vh;
   margin: 100px 0 0 0;
   padding: 0 0 0 30px;
-  height: 100vh;
 `;
 
 export const Form = styled.form`
-  padding: 10px;
-  border: 2px solid ${({ theme }) => theme.colors.accentColor};
-  border-radius: 4px;
-  box-shadow: ${({ theme }) => theme.colors.accentColor} 5px 0 5px;
+  position: sticky;
   font-size: 40px;
   font-weight: bold;
   text-align: center;
-  color: ${({ theme }) => theme.colors.secondaryColor};
-  text-shadow: ${({ theme }) => theme.colors.textShadowColor} 5px 0 1px;
-  position: sticky;
+  padding: 20px;
   top: 50px;
-`;
-
-export const WrapperStyle = styled.div`
-  display: flex;
-  flex-direction: column;
+  border-radius: 4px;
+  color: ${({ theme }) => theme.colors.secondaryColor};
+  border: 2px solid ${({ theme }) => theme.colors.accentColor};
+  box-shadow: ${({ theme }) => theme.colors.accentColor} 5px 0 5px;
 `;
 
 export const WrapperForButton = styled.div`
