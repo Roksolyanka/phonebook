@@ -58,7 +58,6 @@ const RegisterPage = () => {
             label="Name:"
             type="text"
             name="name"
-            autoComplete="name"
             required
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -73,7 +72,6 @@ const RegisterPage = () => {
             label="Email:"
             name="email"
             type="email"
-            autoComplete="email"
             required
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -87,7 +85,6 @@ const RegisterPage = () => {
           <InputComponent
             label="Password:"
             name="password"
-            autoComplete="current-password"
             required
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
