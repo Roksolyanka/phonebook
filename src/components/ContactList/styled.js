@@ -28,6 +28,8 @@ export const ContactItem = styled.li`
 
   &:hover {
     box-shadow: ${({ theme }) => theme.colors.accentColor} 0px 10px 10px 0px;
+    transform: scale(1.02) translateZ(0);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
 
