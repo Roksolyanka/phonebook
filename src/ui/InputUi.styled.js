@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 export const InputUi = styled.input`
-  box-sizing: border-box;
   height: 50px;
-  margin: 0;
   font-size: 20px;
   font-weight: bold;
-  background-color: ${({ theme }) => theme.colors.secondaryColor};
-  padding: 8px 15px;
-  outline: none; /* Видаляє обведення при фокусі */
+  box-sizing: border-box;
+  border: none;
   border-radius: 5px;
+  padding: 8px 15px;
+  margin: 0;
+  background-color: ${({ theme }) => theme.colors.secondaryColor};
+  outline: none; /* Видаляє обведення при фокусі */
   cursor: pointer;
 
   &:hover,

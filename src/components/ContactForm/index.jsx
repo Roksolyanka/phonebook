@@ -10,13 +10,7 @@ import { InputComponent } from 'components/Input';
 
 import { validateContactName, validateContactNumber } from 'helpers/helper';
 
-import {
-  ButtonForm,
-  ContainerForm,
-  Form,
-  WrapperForButton,
-  WrapperStyle,
-} from './styled';
+import { ButtonForm, ContainerForm, Form, WrapperForButton } from './styled';
 
 export const ContactForm = ({ editingContact, setEditingContact }) => {
   const contacts = useSelector(selectUserContacts);
@@ -78,21 +72,17 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
           label="Name:"
           type="text"
           name="contactName"
-          placeholder="Enter name"
           value={contactName}
           onChange={e => setContactName(e.target.value)}
           required
-          wrapperStyle={WrapperStyle}
         />
         <InputComponent
           label="Number:"
           type="text"
           name="contactNumber"
-          placeholder="Enter phone number"
           value={contactNumber}
           onChange={e => setContactNumber(e.target.value)}
           required
-          wrapperStyle={WrapperStyle}
         />
         <WrapperForButton>
           <ButtonForm type="submit">
