@@ -8,7 +8,10 @@ import { selectUserContacts } from 'redux/selectors';
 
 import { InputComponent } from 'components/Input';
 
-import { validateContactName, validateContactNumber } from 'helpers/helper';
+import {
+  duplicateNameNotification,
+  duplicateNumberNotification,
+} from 'helpers/helper';
 
 import { ButtonForm, ContainerForm, Form, WrapperForButton } from './styled';
 
@@ -44,8 +47,8 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
       .join(' ');
 
     if (
-      !validateContactName(contacts, name, editingContact) ||
-      !validateContactNumber(contacts, number, editingContact)
+      !duplicateNameNotification(contacts, name, editingContact) ||
+      !duplicateNumberNotification(contacts, number, editingContact)
     ) {
       return;
     }
