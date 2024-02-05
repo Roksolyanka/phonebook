@@ -16,7 +16,13 @@ import {
   ListPhone,
 } from './styled';
 
-export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
+export const ContactList = ({
+  contacts,
+  onDeleteContact,
+  onEditContact,
+  activeContact,
+  setActiveContact,
+}) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedContact, setSelectedContact] = useState(null);
   const showContacts = Array.isArray(contacts) && contacts.length > 0;
@@ -24,22 +30,37 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
   const openModal = contact => {
     setSelectedContact(contact);
     setShowModal(true);
+    setActiveContact(contact);
   };
 
   const closeModal = () => {
     setSelectedContact(null);
     setShowModal(false);
+    setActiveContact(null);
   };
 
   const callContact = contact => {
     const phoneNumber = contact.number;
     window.location.href = `tel:${phoneNumber}`;
+    setActiveContact(contact);
+
+    setTimeout(() => {
+      setActiveContact(null);
+    }, 10000); //це тимчасово
+  };
+
+  const handleEditContact = contact => {
+    onEditContact(contact);
+    setActiveContact(contact);
   };
 
   return (
     <ContactsList>
       {showContacts &&
         contacts.map(contact => {
+          const isContactActive =
+            activeContact && activeContact.id === contact.id;
+
           return (
             <ContactItem key={contact.id}>
               <ContactWrapper>
@@ -51,6 +72,7 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
                   aria-label="Call the contact"
                   type="button"
                   onClick={() => callContact(contact)}
+                  disabled={isContactActive}
                 >
                   <Icon>
                     <use href={`${sprite}#icon-phone`}></use>
@@ -59,7 +81,8 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
                 <Button
                   aria-label="Edit contact"
                   type="button"
-                  onClick={() => onEditContact(contact)}
+                  onClick={() => handleEditContact(contact)}
+                  disabled={isContactActive}
                 >
                   <Icon>
                     <use href={`${sprite}#icon-pencil`}></use>
@@ -69,6 +92,7 @@ export const ContactList = ({ contacts, onDeleteContact, onEditContact }) => {
                   aria-label="Delete contact"
                   type="button"
                   onClick={() => openModal(contact)}
+                  disabled={isContactActive}
                 >
                   <Icon>
                     <use href={`${sprite}#icon-delete`}></use>
@@ -105,4 +129,10 @@ ContactList.propTypes = {
   ),
   onDeleteContact: PropTypes.func.isRequired,
   onEditContact: PropTypes.func.isRequired,
+  activeContact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }),
+  setActiveContact: PropTypes.func,
 };
