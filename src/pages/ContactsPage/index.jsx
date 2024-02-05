@@ -34,6 +34,7 @@ const ContactsPage = () => {
   const error = useSelector(selectContactsError);
   const filter = useSelector(selectContactsFilter);
   const [editingContact, setEditingContact] = useState(null);
+  const [activeContact, setActiveContact] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -71,6 +72,7 @@ const ContactsPage = () => {
         <ContactForm
           editingContact={editingContact}
           setEditingContact={setEditingContact}
+          setActiveContact={setActiveContact}
         />
         <ContactsContainer>
           <TitleContacts>Contacts</TitleContacts>
@@ -94,6 +96,8 @@ const ContactsPage = () => {
                       contacts={filteredContacts}
                       onEditContact={handleEditContact}
                       onDeleteContact={handleDeleteContact}
+                      activeContact={activeContact}
+                      setActiveContact={setActiveContact}
                     />
                   )}
                 </>
