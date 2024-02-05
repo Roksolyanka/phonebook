@@ -1,30 +1,21 @@
 import { Notify } from 'notiflix';
 
-export const getCurrentYear = () => {
-  const currentYear = new Date().getFullYear();
-  return currentYear;
-};
+export const getCurrentYear = () => new Date().getFullYear();
 
-export const validateContactName = (contacts, name, editingContact) => {
-  if (
-    contacts.some(
-      contact => contact.name === name && editingContact !== contact
-    )
-  ) {
-    Notify.info(`Contact with name ${name} already exists!`);
-    return false;
-  }
-  return true;
-};
+const isDuplicateName = (contacts, name, editingContact) =>
+  contacts.some(contact => contact.name === name && editingContact !== contact);
 
-export const validateContactNumber = (contacts, number, editingContact) => {
-  if (
-    contacts.some(
-      contact => contact.number === number && editingContact !== contact
-    )
-  ) {
-    Notify.info(`Contact with number ${number} already exists!`);
-    return false;
-  }
-  return true;
-};
+const isDuplicateNumber = (contacts, number, editingContact) =>
+  contacts.some(
+    contact => contact.number === number && editingContact !== contact
+  );
+
+export const duplicateNameNotification = (contacts, name, editingContact) =>
+  isDuplicateName(contacts, name, editingContact)
+    ? (Notify.info(`Contact with name ${name} already exists!`), false)
+    : true;
+
+export const duplicateNumberNotification = (contacts, number, editingContact) =>
+  isDuplicateNumber(contacts, number, editingContact)
+    ? (Notify.info(`Contact with number ${number} already exists!`), false)
+    : true;
