@@ -15,24 +15,24 @@ import {
 
 import { ButtonForm, ContainerForm, Form, WrapperForButton } from './styled';
 
+const contactInitialState = {
+  name: '',
+  number: '',
+};
+
 export const ContactForm = ({ editingContact, setEditingContact }) => {
   const contacts = useSelector(selectUserContacts);
   const dispatch = useDispatch();
 
-  const [contactName, setContactName] = useState('');
-  const [contactNumber, setContactNumber] = useState('');
+  const [contact, setContact] = useState(contactInitialState);
 
   useEffect(() => {
-    if (editingContact) {
-      setContactName(editingContact.name);
-      setContactNumber(editingContact.number);
-    }
+    if (editingContact) setContact(editingContact);
   }, [editingContact]);
 
   const handleCancel = () => {
     setEditingContact(null);
-    setContactName('');
-    setContactNumber('');
+    setContact(contactInitialState);
   };
 
   const handleSubmit = event => {
@@ -63,9 +63,15 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
       `Contact ${name} successfully ${editingContact ? 'edited' : 'added'}.`
     );
 
-    setContactName('');
-    setContactNumber('');
+    setContact(contactInitialState);
     setEditingContact(null);
+  };
+
+  const handleSetContact = (inputName, value) => {
+    setContact(prevContact => ({
+      ...prevContact,
+      [inputName]: value,
+    }));
   };
 
   return (
@@ -75,16 +81,16 @@ export const ContactForm = ({ editingContact, setEditingContact }) => {
           label="Name:"
           type="text"
           name="contactName"
-          value={contactName}
-          onChange={e => setContactName(e.target.value)}
+          value={contact.name}
+          onChange={e => handleSetContact('name', e.target.value)}
           required
         />
         <InputComponent
           label="Number:"
           type="text"
           name="contactNumber"
-          value={contactNumber}
-          onChange={e => setContactNumber(e.target.value)}
+          value={contact.number}
+          onChange={e => handleSetContact('number', e.target.value)}
           required
         />
         <WrapperForButton>

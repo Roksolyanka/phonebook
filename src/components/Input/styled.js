@@ -38,15 +38,14 @@ export const Input = styled.input`
   border: none;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
-  cursor: pointer;
 
   ${inputPlaceholderCommonStyle}
 
   &:hover,
   &:focus {
     outline: none;
-    box-shadow: ${({ theme }) => theme.colors.accentColor} 0px 5px 10px,
-      ${({ theme }) => theme.colors.accentColor} 0px 2px 5px;
+    box-shadow: ${({ theme }) => `${theme.colors.accentColor} 0px 5px 10px,
+      ${theme.colors.accentColor} 0px 2px 5px`};
   }
 
   &:focus
@@ -60,8 +59,7 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.colors.primaryColor};
     background-color: ${({ theme }) => theme.colors.secondaryColor};
     transform: translate(0, -140%);
-    box-shadow: ${({ theme }) => theme.colors.accentColor} 0px 5px 10px,
-      ${({ theme }) => theme.colors.accentColor} 0px 2px 5px;
+    box-shadow: ${({ theme }) => theme.colors.boxShadowAccent};
   }
 
   &:focus + ${PlaceholderText} ${Text} {
