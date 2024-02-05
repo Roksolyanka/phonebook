@@ -15,9 +15,4 @@ export const InputFind = styled(InputUi)`
   width: 320px;
   margin: 0 0 0 10px;
   vertical-align: top;
-
-  &: hover, focus {
-    box-shadow: ${({ theme }) => theme.colors.accentColor} 0px 10px 20px,
-      ${({ theme }) => theme.colors.accentColor} 0px 2px 5px;
-  }
 `;

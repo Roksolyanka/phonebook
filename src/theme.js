@@ -8,5 +8,6 @@ export const theme = {
     backdropColor: 'rgba(46, 47, 66, 0.4)',
     textShadowColor: '#120c07',
     boxShadow: 'rgba(0, 0, 0, 0.1)',
+    boxShadowAccent: '#ffe724 0px 10px 20px, #ffe724 0px 2px 5px',
   },
 };
