@@ -11,11 +11,9 @@ export const InputUi = styled.input`
   margin: 0;
   background-color: ${({ theme }) => theme.colors.secondaryColor};
   outline: none; /* Видаляє обведення при фокусі */
-  cursor: pointer;
 
   &:hover,
   &:focus {
-    box-shadow: ${({ theme }) => theme.colors.accentColor} 0px 5px 10px,
-      ${({ theme }) => theme.colors.accentColor} 0px 2px 5px;
+    box-shadow: ${({ theme }) => theme.colors.boxShadowAccent};
   }
 `;
