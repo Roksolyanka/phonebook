@@ -13,7 +13,8 @@ import {
   duplicateNumberNotification,
 } from 'helpers/helper';
 
-import { ButtonForm, ContainerForm, Form, WrapperForButton } from './styled';
+import { ContainerForm, Form, WrapperForButton } from './styled';
+import { ButtonUi } from 'ui/ButtonUi.styled';
 
 const contactInitialState = {
   name: '',
@@ -99,13 +100,13 @@ export const ContactForm = ({
           required
         />
         <WrapperForButton>
-          <ButtonForm type="submit">
+          <ButtonUi margin={'0'} type="submit">
             {editingContact ? 'Edit contact' : 'Add contact'}
-          </ButtonForm>
+          </ButtonUi>
           {editingContact && (
-            <ButtonForm type="button" onClick={handleCancel}>
+            <ButtonUi margin={'0'} type="button" onClick={handleCancel}>
               Cancel
-            </ButtonForm>
+            </ButtonUi>
           )}
         </WrapperForButton>
       </Form>
