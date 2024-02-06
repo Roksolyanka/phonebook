@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { InputUi } from 'ui/InputUi.styled';
 
-export const FilterStyled = styled.label`
-  display: block;
+export const FilterStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 40px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.primaryColor};
@@ -13,6 +15,6 @@ export const FilterStyled = styled.label`
 
 export const InputFind = styled(InputUi)`
   width: 320px;
-  margin: 0 0 0 10px;
+  margin-left: 10px;
   vertical-align: top;
 `;

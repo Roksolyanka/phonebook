@@ -28,5 +28,5 @@ export const NoContacts = styled.p`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.textShadowColor};
   text-align: center;
-  margin: 100px 0 0 0;
+  margin-top: 100px;
 `;

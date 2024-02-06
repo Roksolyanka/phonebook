@@ -9,13 +9,13 @@ import {
 } from 'redux/selectors';
 
 import {
-  ButtonLogOut,
   HeaderStyle,
   NavLeft,
   NavRight,
   StyledNavLink,
   Welcome,
 } from './styled';
+import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -43,7 +43,9 @@ export const Header = () => {
       return (
         <>
           <Welcome>Hello, {userName}!</Welcome>
-          <ButtonLogOut onClick={handleLogOut}>Log out</ButtonLogOut>
+          <ButtonUi margin={'0'} onClick={handleLogOut}>
+            Log out
+          </ButtonUi>
         </>
       );
     return (
