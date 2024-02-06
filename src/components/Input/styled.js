@@ -46,6 +46,7 @@ export const Input = styled.input`
     outline: none;
     box-shadow: ${({ theme }) => `${theme.colors.accentColor} 0px 5px 10px,
       ${theme.colors.accentColor} 0px 2px 5px`};
+    transition: box-shadow 0.3s ease-in-out;
   }
 
   &:focus
@@ -70,7 +71,7 @@ export const Input = styled.input`
 
 export const Wrapper = styled.div`
   position: relative;
-  margin: 0 0 15px 0;
+  margin-bottom: 15px;
 `;
 
 export const Visibility = styled.span`

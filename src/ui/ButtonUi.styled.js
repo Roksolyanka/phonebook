@@ -12,7 +12,7 @@ export const ButtonUi = styled.button`
   padding: 15px;
   max-height: auto;
   width: 170px;
-  margin: 25px;
+  margin: ${({ margin }) => margin || '25px'};
   cursor: pointer;
   outline: none; /* Видаляє обведення при фокусі */
 

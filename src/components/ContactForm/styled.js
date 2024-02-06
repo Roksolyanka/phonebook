@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const ContainerForm = styled.div`
   flex: 1;
   height: 100vh;
-  margin: 100px 0 0 0;
-  padding: 0 0 0 30px;
+  margin-top: 100px;
+  padding-left: 30px;
 `;
 
 export const Form = styled.form`
@@ -24,9 +23,5 @@ export const Form = styled.form`
 export const WrapperForButton = styled.div`
   display: flex;
   justify-content: space-around;
-  margin: 10px 0 0 0;
-`;
-
-export const ButtonForm = styled(ButtonUi)`
-  margin: 0;
+  margin-top: 10px;
 `;
