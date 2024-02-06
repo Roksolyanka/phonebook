@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const ErrorInputMessageUi = styled.p`
   color: ${({ theme }) => theme.colors.errorColor};
-  font-family: Roboto;
   font-size: 14px;
   line-height: 1.17;
   margin: 0;

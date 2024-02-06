@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ButtonUi } from 'ui/ButtonUi.styled';
 import { ModalBackdropUi, ModalBoxUi, ModalTitleUi } from 'ui/ModalUi.styled';
 
 export const ModalDeleteBackdrop = styled(ModalBackdropUi)`
@@ -25,8 +24,4 @@ export const ModalDeleteButtonWrapper = styled.div`
   display: flex;
   gap: 15px;
   justify-content: center;
-`;
-
-export const ModalDeleteButton = styled(ButtonUi)`
-  margin: 0;
 `;

@@ -15,5 +15,6 @@ export const InputUi = styled.input`
   &:hover,
   &:focus {
     box-shadow: ${({ theme }) => theme.colors.boxShadowAccent};
+    transition: box-shadow 0.3s ease-in-out;
   }
 `;

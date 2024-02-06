@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import {
   ModalDeleteBackdrop,
   ModalDeleteBox,
-  ModalDeleteButton,
   ModalDeleteButtonWrapper,
   ModalDeleteTitle,
 } from './styled';
+import { ButtonUi } from 'ui/ButtonUi.styled';
 
 const ModalDelete = ({ contact, onDeleteContact, onNoDeleteContact }) => {
   const onConfirm = () => {
@@ -36,12 +36,12 @@ const ModalDelete = ({ contact, onDeleteContact, onNoDeleteContact }) => {
           {contact.name}?
         </ModalDeleteTitle>
         <ModalDeleteButtonWrapper>
-          <ModalDeleteButton type="button" onClick={onConfirm}>
+          <ButtonUi margin={'0'} type="button" onClick={onConfirm}>
             Yes
-          </ModalDeleteButton>
-          <ModalDeleteButton type="button" onClick={onCancel}>
+          </ButtonUi>
+          <ButtonUi margin={'0'} type="button" onClick={onCancel}>
             No
-          </ModalDeleteButton>
+          </ButtonUi>
         </ModalDeleteButtonWrapper>
       </ModalDeleteBox>
     </ModalDeleteBackdrop>
