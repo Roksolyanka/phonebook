@@ -71,6 +71,7 @@ export const ContactForm = ({
 
     setContact(contactInitialState);
     setEditingContact(null);
+    setActiveContact(null);
   };
 
   const handleSetContact = (inputName, value) => {
