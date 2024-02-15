@@ -9,5 +9,6 @@ export const theme = {
     textShadowColor: '#120c07',
     boxShadow: 'rgba(0, 0, 0, 0.1)',
     boxShadowAccent: '#ffe724 0px 10px 20px, #ffe724 0px 2px 5px',
+    boxShadowPlaceholder: '#ffe724 0px 2px 20px, #ffe724 0px 1px 5px',
   },
 };
