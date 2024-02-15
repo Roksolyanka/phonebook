@@ -60,7 +60,7 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.colors.primaryColor};
     background-color: ${({ theme }) => theme.colors.secondaryColor};
     transform: translate(0, -140%);
-    box-shadow: ${({ theme }) => theme.colors.boxShadowAccent};
+    box-shadow: ${({ theme }) => theme.colors.boxShadowPlaceholder};
   }
 
   &:focus + ${PlaceholderText} ${Text} {
