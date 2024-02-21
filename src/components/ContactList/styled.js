@@ -25,12 +25,6 @@ export const ContactItem = styled.li`
   color: ${({ theme }) => theme.colors.primaryColor};
   border: 1px solid ${({ theme }) => theme.colors.accentColor};
   box-shadow: 0 2px 8px ${({ theme }) => theme.colors.boxShadow};
-
-  &:hover {
-    box-shadow: ${({ theme }) => theme.colors.accentColor} 0px 10px 10px 0px;
-    transform: scale(1.02) translateZ(0);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
 `;
 
 export const ContactWrapper = styled.div`
