@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -10,26 +10,21 @@ import {
 import { ButtonUi } from 'ui/ButtonUi.styled';
 
 const ModalDelete = ({ contact, onDeleteContact, onNoDeleteContact }) => {
+  const dialogRef = useRef(null);
+
   const onConfirm = () => {
     onDeleteContact(contact.id);
+    dialogRef.current.close();
   };
 
   const onCancel = () => {
     onNoDeleteContact();
-  };
-
-  const onBackdropClick = event => {
-    if (event.target.classList.contains('ModalDeleteBackdrop')) {
-      onCancel();
-    }
+    dialogRef.current.close();
   };
 
   return (
-    <ModalDeleteBackdrop
-      className="ModalDeleteBackdrop"
-      onClick={onBackdropClick}
-    >
-      <ModalDeleteBox>
+    <ModalDeleteBackdrop onClick={onCancel}>
+      <ModalDeleteBox ref={dialogRef}>
         <ModalDeleteTitle>
           Are you sure you want to delete <br />
           the contact <br />
