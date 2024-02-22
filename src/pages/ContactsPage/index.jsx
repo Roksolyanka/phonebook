@@ -19,13 +19,18 @@ import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
 import { Loader } from 'components/Loader';
 
+import sprite from '../../assets/sprite.svg';
 import { TitlePhonebook } from 'components/App/App.styled';
 import {
+  ButtonAddContact,
   ContactsContainer,
   Container,
+  ModalBackdrop,
+  NewContactContainer,
   NoContacts,
   TitleContacts,
 } from './styled';
+import { Icon } from 'components/ContactList/styled';
 
 const ContactsPage = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -35,14 +40,43 @@ const ContactsPage = () => {
   const filter = useSelector(selectContactsFilter);
   const [editingContact, setEditingContact] = useState(null);
   const [activeContact, setActiveContact] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(window.innerWidth > 1024);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsFormVisible(window.innerWidth > 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (!authentificated) return;
 
     dispatch(requestContactsThunk());
   }, [authentificated, dispatch]);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const onBackdropClick = event => {
+    if (event.target.classList.contains('ModalBackdrop')) {
+      closeModal();
+      setEditingContact(null);
+      setActiveContact(null);
+    }
+  };
 
   const handleDeleteContact = contactId => {
     dispatch(deleteContactsThunk(contactId));
@@ -69,13 +103,23 @@ const ContactsPage = () => {
     <section>
       <TitlePhonebook>Phonebook</TitlePhonebook>
       <Container>
-        <ContactForm
-          editingContact={editingContact}
-          setEditingContact={setEditingContact}
-          setActiveContact={setActiveContact}
-        />
+        {isFormVisible && (
+          <ContactForm
+            editingContact={editingContact}
+            setEditingContact={setEditingContact}
+            setActiveContact={setActiveContact}
+          />
+        )}
         <ContactsContainer>
           <TitleContacts>Contacts</TitleContacts>
+          <NewContactContainer>
+            <p>Create a new contact</p>
+            <ButtonAddContact onClick={openModal}>
+              <Icon width={'30'} height={'30'}>
+                <use href={`${sprite}#icon-user-plus`}></use>
+              </Icon>
+            </ButtonAddContact>
+          </NewContactContainer>
           {isLoading && <Loader />}
           {error && <p>Oops, some error occured...{error}</p>}
           {contacts === null ? (
@@ -98,6 +142,7 @@ const ContactsPage = () => {
                       onDeleteContact={handleDeleteContact}
                       activeContact={activeContact}
                       setActiveContact={setActiveContact}
+                      onOpenModal={openModal}
                     />
                   )}
                 </>
@@ -106,6 +151,16 @@ const ContactsPage = () => {
           )}
         </ContactsContainer>
       </Container>
+      {showModal && (
+        <ModalBackdrop className="ModalBackdrop" onClick={onBackdropClick}>
+          <ContactForm
+            editingContact={editingContact}
+            setEditingContact={setEditingContact}
+            setActiveContact={setActiveContact}
+            onCloseModal={closeModal}
+          />
+        </ModalBackdrop>
+      )}
     </section>
   );
 };

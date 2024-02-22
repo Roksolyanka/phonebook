@@ -6,12 +6,12 @@ export const ButtonUi = styled.button`
   box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.textShadowColor};
   font-family: 'Roboto';
   font-weight: bold;
-  font-size: 25px;
+  font-size: 18px;
   border: none;
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
   max-height: auto;
-  width: 170px;
+  max-width: auto;
   margin: ${({ margin }) => margin || '25px'};
   cursor: pointer;
   outline: none; /* Видаляє обведення при фокусі */
@@ -34,5 +34,10 @@ export const ButtonUi = styled.button`
   &:disabled:hover,
   &:disabled:focus {
     box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.textShadowColor};
+  }
+
+  @media (min-width: 640px) {
+    font-size: 25px;
+    padding: 15px;
   }
 `;
