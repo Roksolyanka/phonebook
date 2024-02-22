@@ -3,9 +3,22 @@ import { ButtonUi } from 'ui/ButtonUi.styled';
 
 export const ContactsList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 10px;
   list-style: none;
+  padding-inline-start: 0;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const ContactItem = styled.li`
@@ -13,7 +26,7 @@ export const ContactItem = styled.li`
   justify-content: space-between;
   align-items: center;
   text-align: start;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   list-style: none;
   width: 100%;
@@ -25,6 +38,10 @@ export const ContactItem = styled.li`
   color: ${({ theme }) => theme.colors.primaryColor};
   border: 1px solid ${({ theme }) => theme.colors.accentColor};
   box-shadow: 0 2px 8px ${({ theme }) => theme.colors.boxShadow};
+
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
 `;
 
 export const ContactWrapper = styled.div`
@@ -53,13 +70,12 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const Icon = styled.svg`
-  width: 15px;
-  height: 15px;
+  width: ${({ width }) => width || '15px'};
+  height: ${({ height }) => height || '15px'};
 `;
 
 export const Button = styled(ButtonUi)`
   border-radius: 5px;
-  padding: 0;
-  width: 35px;
+  padding: 2px 10px;
   margin: 10px 0;
 `;

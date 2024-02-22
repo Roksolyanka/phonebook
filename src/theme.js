@@ -11,4 +11,12 @@ export const theme = {
     boxShadowAccent: '#ffe724 0px 10px 20px, #ffe724 0px 2px 5px',
     boxShadowPlaceholder: '#ffe724 0px 2px 20px, #ffe724 0px 1px 5px',
   },
+  breakpoints: {
+    values: {
+      mobile: 0,
+      tablet: 640,
+      laptop: 1024,
+      desktop: 1200,
+    },
+  },
 };

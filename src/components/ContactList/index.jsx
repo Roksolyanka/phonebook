@@ -22,6 +22,7 @@ export const ContactList = ({
   onEditContact,
   activeContact,
   setActiveContact,
+  onOpenModal,
 }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedContact, setSelectedContact] = useState(null);
@@ -50,8 +51,16 @@ export const ContactList = ({
   };
 
   const handleEditContact = contact => {
-    onEditContact(contact);
-    setActiveContact(contact);
+     if (window.innerWidth <= 1024) {
+       onOpenModal();
+       onEditContact(contact);
+       setActiveContact(contact);
+     } else {
+      onEditContact(contact);
+      setActiveContact(contact);
+     }
+    
+    
   };
 
   return (
@@ -129,6 +138,7 @@ ContactList.propTypes = {
   ),
   onDeleteContact: PropTypes.func.isRequired,
   onEditContact: PropTypes.func.isRequired,
+  onOpenModal: PropTypes.func.isRequired,
   activeContact: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
