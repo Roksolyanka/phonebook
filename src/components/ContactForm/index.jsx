@@ -25,6 +25,7 @@ export const ContactForm = ({
   editingContact,
   setEditingContact,
   setActiveContact,
+  onCloseModal,
 }) => {
   const contacts = useSelector(selectUserContacts);
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ export const ContactForm = ({
     setEditingContact(null);
     setContact(contactInitialState);
     setActiveContact(null);
+    onCloseModal();
   };
 
   const handleSubmit = event => {
@@ -72,6 +74,7 @@ export const ContactForm = ({
     setContact(contactInitialState);
     setEditingContact(null);
     setActiveContact(null);
+    onCloseModal();
   };
 
   const handleSetContact = (inputName, value) => {
@@ -119,6 +122,7 @@ ContactForm.propTypes = {
   editingContact: PropTypes.object,
   setEditingContact: PropTypes.func,
   setActiveContact: PropTypes.func,
+  onCloseModal: PropTypes.func,
   contacts: PropTypes.array,
 };
 

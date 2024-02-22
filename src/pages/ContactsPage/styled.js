@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { ButtonUi } from 'ui/ButtonUi.styled';
+import { ModalBackdropUi } from 'ui/ModalUi.styled';
 
 export const Container = styled.div`
   display: flex;
@@ -10,12 +12,55 @@ export const Container = styled.div`
 `;
 
 export const TitleContacts = styled.h2`
-  font-size: 70px;
+  font-size: 25px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.secondaryColor};
   text-align: center;
   text-shadow: ${({ theme }) => theme.colors.textShadowColor} 10px 0 5px;
   margin: 10px 0;
+
+  @media (min-width: 640px) {
+    font-size: 35px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 50px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 70px;
+  }
+`;
+
+export const NewContactContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.primaryColor};
+  text-align: center;
+  text-shadow: ${({ theme }) => theme.colors.textShadowColor} 2px 0 0;
+
+  @media (min-width: 640px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`;
+
+export const ModalBackdrop = styled(ModalBackdropUi)`
+  top: 0;
+  height: 100%;
+`;
+
+export const ButtonAddContact = styled(ButtonUi)`
+  font-size: 0;
+  padding: 10px;
+  margin: 0;
 `;
 
 export const ContactsContainer = styled.div`
