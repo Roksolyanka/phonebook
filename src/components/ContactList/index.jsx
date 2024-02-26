@@ -59,8 +59,6 @@ export const ContactList = ({
       onEditContact(contact);
       setActiveContact(contact);
      }
-    
-    
   };
 
   return (
@@ -111,19 +109,18 @@ export const ContactList = ({
             </ContactItem>
           );
         })}
-      {showModal && (
-        <ModalDelete
-          contact={selectedContact}
-          onDeleteContact={contactId => {
-            onDeleteContact(contactId);
-            Notify.success(
-              `Contact ${selectedContact.name} successfully deleted.`
-            );
-            closeModal();
-          }}
-          onNoDeleteContact={closeModal}
-        />
-      )}
+      <ModalDelete
+        open={showModal}
+        contact={selectedContact}
+        onDeleteContact={() => {
+          onDeleteContact(selectedContact.id);
+          Notify.success(
+            `Contact ${selectedContact.name} successfully deleted.`
+          );
+          setShowModal(false);
+        }}
+        onNoDeleteContact={closeModal}
+      />
     </ContactsList>
   );
 };
