@@ -25,12 +25,12 @@ import {
   ButtonAddContact,
   ContactsContainer,
   Container,
-  ModalBackdrop,
   NewContactContainer,
   NoContacts,
   TitleContacts,
 } from './styled';
 import { Icon } from 'components/ContactList/styled';
+import { Modal } from 'components/Modal';
 
 const ContactsPage = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -68,14 +68,8 @@ const ContactsPage = () => {
 
   const closeModal = () => {
     setShowModal(false);
-  };
-
-  const onBackdropClick = event => {
-    if (event.target.classList.contains('ModalBackdrop')) {
-      closeModal();
-      setEditingContact(null);
-      setActiveContact(null);
-    }
+    setEditingContact(null);
+    setActiveContact(null);
   };
 
   const handleDeleteContact = contactId => {
@@ -152,14 +146,15 @@ const ContactsPage = () => {
         </ContactsContainer>
       </Container>
       {showModal && (
-        <ModalBackdrop className="ModalBackdrop" onClick={onBackdropClick}>
+        <Modal open={open} onClose={closeModal}>
           <ContactForm
+            open={showModal}
             editingContact={editingContact}
             setEditingContact={setEditingContact}
             setActiveContact={setActiveContact}
             onCloseModal={closeModal}
           />
-        </ModalBackdrop>
+        </Modal>
       )}
     </section>
   );
