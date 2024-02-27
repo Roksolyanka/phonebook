@@ -31,6 +31,7 @@ import {
 } from './styled';
 import { Icon } from 'components/ContactList/styled';
 import { Modal } from 'components/Modal';
+import { findItem } from 'helpers/helper';
 
 const ContactsPage = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -84,14 +85,7 @@ const ContactsPage = () => {
     dispatch(setFilter(event.target.value));
   };
 
-  const findContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-    return contacts?.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
-    );
-  };
-
-  const filteredContacts = findContacts();
+  const filteredContacts = contacts ? findItem(contacts, 'name', filter) : [];
 
   return (
     <section>
