@@ -13,15 +13,15 @@ export const FilterStyled = styled.div`
   text-shadow: ${({ theme }) => theme.colors.textShadowColor} 2px 0 0;
   margin: 10px 0 30px 0;
 
-  @media (min-width: 640px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}) {
     font-size: 20px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}) {
     font-size: 30px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.desktop}) {
     font-size: 40px;
   }
 `;

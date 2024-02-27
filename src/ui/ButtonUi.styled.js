@@ -36,7 +36,7 @@ export const ButtonUi = styled.button`
     box-shadow: 5px 5px 2px 0px ${({ theme }) => theme.colors.textShadowColor};
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}) {
     font-size: 25px;
     padding: 15px;
   }

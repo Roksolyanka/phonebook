@@ -18,7 +18,7 @@ export const NavRight = styled.nav`
   align-items: center;
   gap: 10px;
 
-  @media (min-width: 640px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}) {
     gap: 20px;
   }
 `;
@@ -46,7 +46,7 @@ export const StyledNavLink = styled(NavLink)`
     display: none;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}) {
     font-size: 25px;
     padding: 15px;
   }
@@ -58,7 +58,7 @@ export const Welcome = styled.span`
   color: ${({ theme }) => theme.colors.textShadowColor};
   text-shadow: 0 1px 0 ${({ theme }) => theme.colors.textShadowColor};
 
-  @media (min-width: 640px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}) {
     font-size: 25px;
   }
 `;
