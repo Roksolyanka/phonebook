@@ -62,11 +62,11 @@ const ContactsPage = () => {
     dispatch(requestContactsThunk());
   }, [authentificated, dispatch]);
 
-  const openModal = () => {
+  const handleOpenModal = () => {
     setShowModal(true);
   };
 
-  const closeModal = () => {
+  const handleCloseModal = () => {
     setShowModal(false);
     setEditingContact(null);
     setActiveContact(null);
@@ -80,7 +80,7 @@ const ContactsPage = () => {
     setEditingContact(contact);
   };
 
-  const changeFilter = event => {
+  const handleChangeFilter = event => {
     dispatch(setFilter(event.target.value));
   };
 
@@ -102,13 +102,14 @@ const ContactsPage = () => {
             editingContact={editingContact}
             setEditingContact={setEditingContact}
             setActiveContact={setActiveContact}
+            onCloseModal={handleCloseModal}
           />
         )}
         <ContactsContainer>
           <TitleContacts>Contacts</TitleContacts>
           <NewContactContainer>
             <p>Create a new contact</p>
-            <ButtonAddContact onClick={openModal}>
+            <ButtonAddContact onClick={handleOpenModal}>
               <Icon width={'30'} height={'30'}>
                 <use href={`${sprite}#icon-user-plus`}></use>
               </Icon>
@@ -126,7 +127,7 @@ const ContactsPage = () => {
                 </>
               ) : (
                 <>
-                  <Filter value={filter} onChange={changeFilter} />
+                  <Filter value={filter} onChange={handleChangeFilter} />
                   {filteredContacts.length === 0 ? (
                     <NoContacts>No contact found with this name.</NoContacts>
                   ) : (
@@ -136,7 +137,7 @@ const ContactsPage = () => {
                       onDeleteContact={handleDeleteContact}
                       activeContact={activeContact}
                       setActiveContact={setActiveContact}
-                      onOpenModal={openModal}
+                      onOpenModal={handleOpenModal}
                     />
                   )}
                 </>
@@ -146,13 +147,13 @@ const ContactsPage = () => {
         </ContactsContainer>
       </Container>
       {showModal && (
-        <Modal open={open} onClose={closeModal}>
+        <Modal open={open} onClose={handleCloseModal}>
           <ContactForm
             open={showModal}
             editingContact={editingContact}
             setEditingContact={setEditingContact}
             setActiveContact={setActiveContact}
-            onCloseModal={closeModal}
+            onCloseModal={handleCloseModal}
           />
         </Modal>
       )}

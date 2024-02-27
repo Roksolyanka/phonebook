@@ -28,19 +28,19 @@ export const ContactList = ({
   const [selectedContact, setSelectedContact] = useState(null);
   const showContacts = Array.isArray(contacts) && contacts.length > 0;
 
-  const openModal = contact => {
+  const handleOpenModal = contact => {
     setSelectedContact(contact);
     setShowModal(true);
     setActiveContact(contact);
   };
 
-  const closeModal = () => {
+  const handleCloseModal = () => {
     setSelectedContact(null);
     setShowModal(false);
     setActiveContact(null);
   };
 
-  const callContact = contact => {
+  const handleCallContact = contact => {
     const phoneNumber = contact.number;
     window.location.href = `tel:${phoneNumber}`;
     setActiveContact(contact);
@@ -51,14 +51,14 @@ export const ContactList = ({
   };
 
   const handleEditContact = contact => {
-     if (window.innerWidth <= 1024) {
-       onOpenModal();
-       onEditContact(contact);
-       setActiveContact(contact);
-     } else {
+    if (window.innerWidth <= 1024) {
+      onOpenModal();
       onEditContact(contact);
       setActiveContact(contact);
-     }
+    } else {
+      onEditContact(contact);
+      setActiveContact(contact);
+    }
   };
 
   return (
@@ -78,7 +78,7 @@ export const ContactList = ({
                 <Button
                   aria-label="Call the contact"
                   type="button"
-                  onClick={() => callContact(contact)}
+                  onClick={() => handleCallContact(contact)}
                   disabled={isContactActive}
                 >
                   <Icon>
@@ -98,7 +98,7 @@ export const ContactList = ({
                 <Button
                   aria-label="Delete contact"
                   type="button"
-                  onClick={() => openModal(contact)}
+                  onClick={() => handleOpenModal(contact)}
                   disabled={isContactActive}
                 >
                   <Icon>
@@ -119,7 +119,7 @@ export const ContactList = ({
           );
           setShowModal(false);
         }}
-        onNoDeleteContact={closeModal}
+        onNoDeleteContact={handleCloseModal}
       />
     </ContactsList>
   );
