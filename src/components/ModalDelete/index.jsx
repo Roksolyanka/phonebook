@@ -6,13 +6,8 @@ import { ButtonUi } from 'ui/ButtonUi.styled';
 import { Modal } from 'components/Modal';
 
 const ModalDelete = ({ open, contact, onDeleteContact, onNoDeleteContact }) => {
-  const onCancel = () => {
-    onNoDeleteContact();
-    onNoDeleteContact();
-  };
-
   return (
-    <Modal open={open} onClose={onCancel}>
+    <Modal open={open} onClose={onNoDeleteContact}>
       <ModalDeleteTitle>
         Are you sure you want to delete <br />
         the contact <br />
@@ -22,7 +17,7 @@ const ModalDelete = ({ open, contact, onDeleteContact, onNoDeleteContact }) => {
         <ButtonUi margin={'0'} type="button" onClick={onDeleteContact}>
           Yes
         </ButtonUi>
-        <ButtonUi margin={'0'} type="button" onClick={onCancel}>
+        <ButtonUi margin={'0'} type="button" onClick={onNoDeleteContact}>
           No
         </ButtonUi>
       </ModalDeleteButtonWrapper>
