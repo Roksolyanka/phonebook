@@ -11,15 +11,15 @@ export const TitlePhonebook = styled.h1`
   box-shadow: ${({ theme }) => `${theme.colors.accentColor} 0px 20px 30px,
     ${theme.colors.accentColor} 0px 2px 5px`};
 
-  @media (min-width: 640px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}) {
     font-size: 50px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}) {
     font-size: 70px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.desktop}) {
     font-size: 100px;
   }
 `;

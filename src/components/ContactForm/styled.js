@@ -18,7 +18,7 @@ export const ContainerForm = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}) {
     display: block;
     flex: 1;
     height: 100vh;
@@ -37,7 +37,7 @@ export const Form = styled.form`
   border-radius: 4px;
   color: ${({ theme }) => theme.colors.secondaryColor};
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}) {
     border: 2px solid ${({ theme }) => theme.colors.accentColor};
     box-shadow: ${({ theme }) => theme.colors.accentColor} 5px 0 5px;
     padding: 20px;
