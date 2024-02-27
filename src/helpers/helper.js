@@ -19,3 +19,10 @@ export const duplicateNumberNotification = (contacts, number, editingContact) =>
   isDuplicateNumber(contacts, number, editingContact)
     ? (Notify.info(`Contact with number ${number} already exists!`), false)
     : true;
+
+export const findItem = (arr, searchValue, filter) => {
+  const normalizedFilter = filter.toLowerCase();
+  return arr.filter(item =>
+    item[searchValue].toLowerCase().includes(normalizedFilter)
+  );
+};
