@@ -8,15 +8,15 @@ export const ContactsList = styled.ul`
   list-style: none;
   padding-inline-start: 0;
 
-  @media (min-width: 640px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}) {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.desktop}) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
