@@ -11,12 +11,12 @@ export const ImagePhonebook = styled.img`
   width: 300px;
   height: 200px;
 
-  @media (min-width: 640px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.tablet}) {
     width: 500px;
     height: 300px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.laptop}) {
     width: 600px;
     height: 400px;
   }
