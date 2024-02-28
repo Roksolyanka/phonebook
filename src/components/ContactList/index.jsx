@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Notify } from 'notiflix';
 
 import { ModalDelete } from 'components/ModalDelete';
-import { ContactItemComponent } from 'components/ContactItem';
+import { ContactItem } from 'components/ContactItem';
 
 import { ContactsList } from './styled';
 
@@ -57,7 +57,7 @@ export const ContactList = ({
       {showContacts &&
         contacts.map(contact => {
           return (
-            <ContactItemComponent
+            <ContactItem
               key={contact.id}
               contact={contact}
               activeContact={activeContact}
