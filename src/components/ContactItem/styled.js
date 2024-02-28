@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ButtonUi } from 'ui/ButtonUi.styled';
 
-export const ContactItem = styled.li`
+export const ContactItemStyled = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -6,13 +6,13 @@ import { Icon } from 'components/Icon';
 import {
   Button,
   ButtonWrapper,
-  ContactItem,
+  ContactItemStyled,
   ContactWrapper,
   ListName,
   ListPhone,
 } from './styled';
 
-export const ContactItemComponent = ({
+export const ContactItem = ({
   contact,
   activeContact,
   handleCallContact,
@@ -22,7 +22,7 @@ export const ContactItemComponent = ({
   const isContactActive = activeContact && activeContact.id === contact.id;
 
   return (
-    <ContactItem key={contact.id}>
+    <ContactItemStyled key={contact.id}>
       <ContactWrapper>
         <ListName>{contact.name}:</ListName>
         <ListPhone>{contact.number}</ListPhone>
@@ -53,11 +53,11 @@ export const ContactItemComponent = ({
           <Icon name="icon-delete" width="15px" height="15px" />
         </Button>
       </ButtonWrapper>
-    </ContactItem>
+    </ContactItemStyled>
   );
 };
 
-ContactItemComponent.propTypes = {
+ContactItem.propTypes = {
   contact: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
