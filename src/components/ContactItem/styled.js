@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ButtonUi } from 'ui/ButtonUi.styled';
 
-export const ContactItem = styled.li`
+export const ContactItemStyled = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,11 +47,6 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-`;
-
-export const Icon = styled.svg`
-  width: ${({ width }) => width || '15px'};
-  height: ${({ height }) => height || '15px'};
 `;
 
 export const Button = styled(ButtonUi)`
