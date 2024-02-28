@@ -49,11 +49,6 @@ export const ButtonWrapper = styled.div`
   gap: 10px;
 `;
 
-export const Icon = styled.svg`
-  width: ${({ width }) => width || '15px'};
-  height: ${({ height }) => height || '15px'};
-`;
-
 export const Button = styled(ButtonUi)`
   border-radius: 5px;
   padding: 2px 10px;

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import sprite from '../../assets/sprite.svg';
+import { Icon } from 'components/Icon';
+
 import {
   Button,
   ButtonWrapper,
   ContactItem,
   ContactWrapper,
-  Icon,
   ListName,
   ListPhone,
 } from './styled';
@@ -34,9 +34,7 @@ export const ContactItemComponent = ({
           onClick={() => handleCallContact(contact)}
           disabled={isContactActive}
         >
-          <Icon>
-            <use href={`${sprite}#icon-phone`}></use>
-          </Icon>
+          <Icon name="icon-phone" width="15px" height="15px" />
         </Button>
         <Button
           aria-label="Edit contact"
@@ -44,9 +42,7 @@ export const ContactItemComponent = ({
           onClick={() => handleEditContact(contact)}
           disabled={isContactActive}
         >
-          <Icon>
-            <use href={`${sprite}#icon-pencil`}></use>
-          </Icon>
+          <Icon name="icon-pencil" width="15px" height="15px" />
         </Button>
         <Button
           aria-label="Delete contact"
@@ -54,9 +50,7 @@ export const ContactItemComponent = ({
           onClick={() => handleOpenModal(contact)}
           disabled={isContactActive}
         >
-          <Icon>
-            <use href={`${sprite}#icon-delete`}></use>
-          </Icon>
+          <Icon name="icon-delete" width="15px" height="15px" />
         </Button>
       </ButtonWrapper>
     </ContactItem>

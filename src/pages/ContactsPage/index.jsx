@@ -18,11 +18,9 @@ import { ContactForm } from 'components/ContactForm';
 import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
 import { Loader } from 'components/Loader';
-import { TitlePhonebook } from 'components/App/App.styled';
-import { Icon } from 'components/ContactItem/styled';
 import { Modal } from 'components/Modal';
+import { Icon } from 'components/Icon';
 
-import sprite from '../../assets/sprite.svg';
 import {
   ButtonAddContact,
   ContactsContainer,
@@ -31,6 +29,7 @@ import {
   NoContacts,
   TitleContacts,
 } from './styled';
+import { TitlePhonebook } from 'components/App/App.styled';
 
 import { findItem } from 'helpers/helper';
 
@@ -105,9 +104,7 @@ const ContactsPage = () => {
           <NewContactContainer>
             <p>Create a new contact</p>
             <ButtonAddContact onClick={handleOpenModal}>
-              <Icon width={'30'} height={'30'}>
-                <use href={`${sprite}#icon-user-plus`}></use>
-              </Icon>
+              <Icon name="icon-user-plus" width="30px" height="30px"></Icon>
             </ButtonAddContact>
           </NewContactContainer>
           {isLoading && <Loader />}
