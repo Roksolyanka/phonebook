@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import sprite from '../../assets/sprite.svg';
+import { Icon } from 'components/Icon';
+
 import { ErrorInputMessageUi } from 'ui/ErrorInputMessageUi.styled';
 import { Input, PlaceholderText, Text, Visibility, Wrapper } from './styled';
 
@@ -25,9 +26,7 @@ export const InputComponent = props => {
       </PlaceholderText>
       {name === 'password' && (
         <Visibility onClick={togglePasswordVisibility}>
-          <svg>
-            <use href={`${sprite}#icon-eye${iconType}`}></use>
-          </svg>
+          <Icon name={`icon-eye${iconType}`} width="15px" height="15px" />
         </Visibility>
       )}
       {formik && formik.touched[name] && formik.errors[name] && (
