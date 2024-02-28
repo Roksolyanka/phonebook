@@ -5,7 +5,7 @@ import { ModalDeleteButtonWrapper, ModalDeleteTitle } from './styled';
 import { ButtonUi } from 'ui/ButtonUi.styled';
 import { Modal } from 'components/Modal';
 
-const ModalDelete = ({ open, contact, onDeleteContact, onNoDeleteContact }) => {
+export const ModalDelete = ({ open, contact, onDeleteContact, onNoDeleteContact }) => {
   return (
     <Modal open={open} onClose={onNoDeleteContact}>
       <ModalDeleteTitle>
@@ -35,5 +35,3 @@ ModalDelete.propTypes = {
   onDeleteContact: PropTypes.func.isRequired,
   onNoDeleteContact: PropTypes.func.isRequired,
 };
-
-export default ModalDelete;

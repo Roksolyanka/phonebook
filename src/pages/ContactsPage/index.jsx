@@ -18,9 +18,11 @@ import { ContactForm } from 'components/ContactForm';
 import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
 import { Loader } from 'components/Loader';
+import { TitlePhonebook } from 'components/App/App.styled';
+import { Icon } from 'components/ContactItem/styled';
+import { Modal } from 'components/Modal';
 
 import sprite from '../../assets/sprite.svg';
-import { TitlePhonebook } from 'components/App/App.styled';
 import {
   ButtonAddContact,
   ContactsContainer,
@@ -29,8 +31,7 @@ import {
   NoContacts,
   TitleContacts,
 } from './styled';
-import { Icon } from 'components/ContactList/styled';
-import { Modal } from 'components/Modal';
+
 import { findItem } from 'helpers/helper';
 
 const ContactsPage = () => {
