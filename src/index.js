@@ -19,7 +19,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <PersistGate loading={<Loader />} persistor={persistor}>
-          <BrowserRouter basename="/phonebook">
+          <BrowserRouter
+            basename="/phonebook"
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+            }}
+          >
             <App />
           </BrowserRouter>{' '}
         </PersistGate>
