@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const $instance = axios.create({
-  baseURL: 'https://phonebook-10d9.onrender.com',
+  baseURL: process.env.REACT_APP_API_URL,
 });
 
 export const setToken = token => {
