@@ -1,27 +1,41 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from 'firebase/auth';
+import { app } from 'redux/firebaseConfig';
 
-export const $instance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
-});
-
-export const setToken = token => {
-  $instance.defaults.headers['Authorization'] = `Bearer ${token}`;
-};
-
-export const clearToken = () => {
-  $instance.defaults.headers['Authorization'] = '';
-};
+const auth = getAuth(app);
 
 export const registerUserThunk = createAsyncThunk(
   'auth/register',
   async (userData, thunkApi) => {
     try {
-      const { data } = await $instance.post('/users/signup', userData);
-      setToken(data.token);
+      const { email, password, name } = userData;
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-      return data;
+      await updateProfile(userCredential.user, {
+        displayName: name,
+      });
+
+      const user = {
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+        token: userCredential.user.accessToken,
+        name: userCredential.user.displayName,
+      };
+
+      return { user };
     } catch (error) {
+      console.error(error);
       return thunkApi.rejectWithValue(error.message);
     }
   }
@@ -31,10 +45,19 @@ export const loginUserThunk = createAsyncThunk(
   'auth/login',
   async (userData, thunkApi) => {
     try {
-      const { data } = await $instance.post('/users/login', userData);
-      setToken(data.token);
-
-      return data;
+      const { email, password } = userData;
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = {
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+        token: userCredential.user.accessToken,
+        name: userCredential.user.displayName,
+      };
+      return { user };
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
@@ -44,13 +67,23 @@ export const loginUserThunk = createAsyncThunk(
 export const refreshUserThunk = createAsyncThunk(
   'auth/refreshUser',
   async (_, thunkApi) => {
-    const state = thunkApi.getState();
-    const token = state.auth.token;
     try {
-      setToken(token);
-      const { data } = await $instance.get('/users/current');
-
-      return data;
+      return new Promise((resolve, reject) => {
+        onAuthStateChanged(auth, user => {
+          if (user) {
+            resolve({
+              user: {
+                uid: user.uid,
+                email: user.email,
+                token: user.accessToken,
+                name: user.displayName,
+              },
+            });
+          } else {
+            reject('User not authenticated');
+          }
+        });
+      });
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
@@ -61,10 +94,8 @@ export const logoutUserThunk = createAsyncThunk(
   'auth/logout',
   async (_, thunkApi) => {
     try {
-      const { data } = await $instance.post('/users/logout');
-      clearToken();
-
-      return data;
+      await signOut(auth);
+      return null;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }

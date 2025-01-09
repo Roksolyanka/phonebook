@@ -8,7 +8,7 @@ import {
 } from './operations';
 
 const initialState = {
-  contacts: null,
+  contacts: [],
   isLoading: false,
   error: null,
   filter: '',
@@ -61,7 +61,7 @@ const contactsSlice = createSlice({
       .addCase(deleteContactsThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.contacts = state.contacts.filter(
-          contact => contact.id !== action.payload.id
+          contact => contact.id !== action.payload
         );
       })
       .addCase(deleteContactsThunk.rejected, (state, action) => {

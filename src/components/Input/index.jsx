@@ -7,7 +7,7 @@ import { ErrorInputMessageUi } from 'ui/ErrorInputMessageUi.styled';
 import { Input, PlaceholderText, Text, Visibility, Wrapper } from './styled';
 
 export const InputComponent = props => {
-  const { label, name, formik } = props;
+  const { label, name, formik, autocomplete } = props;
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -20,7 +20,13 @@ export const InputComponent = props => {
 
   return (
     <Wrapper>
-      <Input id={htmlFor} name={name} type={inputType} {...props} />
+      <Input
+        id={htmlFor}
+        name={name}
+        type={inputType}
+        autoComplete={autocomplete}
+        {...props}
+      />
       <PlaceholderText htmlFor={htmlFor}>
         <Text>{label}</Text>
       </PlaceholderText>
@@ -48,4 +54,5 @@ InputComponent.propTypes = {
     handleSubmit: PropTypes.func,
     isSubmitting: PropTypes.bool,
   }),
+  autocomplete: PropTypes.string,
 };

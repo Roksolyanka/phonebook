@@ -62,6 +62,7 @@ const LoginPage = () => {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             formik={formik}
+            autocomplete="username"
             className={
               formik.errors.email && formik.touched.email ? 'input-error' : ''
             }
@@ -75,6 +76,7 @@ const LoginPage = () => {
             onBlur={formik.handleBlur}
             value={formik.values.password}
             formik={formik}
+            autocomplete="current-password"
             className={
               formik.errors.password && formik.touched.password
                 ? 'input-error'
